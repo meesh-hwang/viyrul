@@ -1,0 +1,15 @@
+
+@font-face {
+  font-family: "Karla";
+  src: url("./assets/fonts/Karla-VariableFont_wght.woff2") format("woff2 supports variations"),
+  url("./assets/fonts/Karla-VariableFont_wght.woff2") format("woff2-variations");
+  font-weight: 1 1000;
+}
+ 
+body {
+  margin: 0;
+  font-family: 'Karla', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}

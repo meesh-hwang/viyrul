@@ -1,0 +1,171 @@
+/* 
+
+Primary - #7A5B0A
+Primary Light - #0C0C0C
+Primary Lighter - #FFD977
+Secondary - #000000
+Secondary Light - #B2B2B2
+Secondary Lighter - #1F1F1F
+Light - #E0E0E0
+
+*/
+
+:root {
+  --primary: #7A5B0A;
+  --primaryLight: #C58E00;
+  --primaryLighter: #FFD977;
+  --secondary: #000000;
+  --secondaryLight: #0C0C0C;
+  --secondaryLighter: #1F1F1F;
+  --light: #B3B3B3;
+  --ligher: #E0E0E0;
+  --white: #ffffff;
+}
+
+a {
+  text-decoration: none;
+}
+
+
+.diagonal {
+  background-color: #000000;
+  background-image: -webkit-linear-gradient(35deg, #000000 65%, #0C0C0C 0%);
+  height: 300vh;
+  position: absolute;
+  width: 100vw;
+  z-index: -1;
+}
+
+header.header {
+  justify-content: space-between;
+  align-items: flex-end;
+  display: flex;
+  padding: 4vh 4vw 0 4vw;
+}
+
+.logo {
+  width: calc(1rem + 7vw);
+  height: auto;
+}
+
+ul.menu {
+  display: flex;
+  list-style-type: none;
+  justify-content: space-between;
+}
+
+.menu li {
+  padding-left: 100px;
+}
+
+.menu li a {
+  color: white;
+  text-decoration: none;
+  font-family: 'Karla';
+  font-weight: 200;
+  font-size: calc(1rem + 0.1vw);
+}
+
+.menu li a:hover {
+  color: #FFD977;
+}
+
+
+.hero {
+  display: flex;
+}
+
+.hero-text {
+  color: white;
+  display: flex;
+  flex-direction: column;
+  padding: 12% 10%;
+  width: 100%;
+}
+
+.hero-h1 {
+  border-left: 4px solid var(--primary);
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.hero-text h1 {
+  font-family: 'Karla';
+  font-weight: 200;
+  font-size: calc(1rem + 1.3vw);
+  line-height: 60px;
+  padding-left: 10px;
+  text-transform: capitalize;
+}
+
+.hero-text p {
+  font-weight: 100;
+  line-height: 35px;
+  font-size: calc(1rem + 0.2vw);
+  padding: 15px 0 0 15px;
+}
+
+.hero-btn {
+  background-color: var(--primary);
+  color: var(--secondary);
+  width: 100px;
+  padding: 10px 0;
+  margin: 20px 0 0 10px;
+  text-align: center;
+  border-radius: 20px;
+}
+
+
+/* scroll */
+
+.scene {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: auto;
+  width: 100%;
+}
+
+.phones {
+  width: 100%;
+  height: 100%;
+  max-width: 322px;
+  min-height:630px;
+  max-height: 630px;
+  object-fit: cover;
+  object-position: 0 50%;
+}
+
+/* Services */
+
+.services {
+  display: flex;
+  justify-content: center;
+}
+
+.service {
+  display: flex;
+  flex-direction: column;
+  color: var(--white);
+  width: 15%;
+  background-color: var(--secondaryLighter);
+  padding: 20px 40px;
+  margin: 150px 80px;
+}
+
+.service-icon {
+  width: 60px;
+  padding: 15px 0;
+}
+
+.service h2 {
+  font-size: calc(1rem + 0.2vw);
+}
+
+.service p {
+  font-size: calc(0.8rem + 0.1vw);
+  font-weight: 100;
+  line-height: 25px;
+}
