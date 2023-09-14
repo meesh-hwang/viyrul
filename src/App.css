@@ -11,8 +11,8 @@ Light - #E0E0E0
 */
 
 :root {
-  --primary: #7A5B0A;
-  --primaryLight: #C58E00;
+  --primary: #6d5008;
+  --primaryLight: #7c5c0a;
   --primaryLighter: #FFD977;
   --secondary: #000000;
   --secondaryLight: #0C0C0C;
@@ -27,9 +27,9 @@ a {
 }
 
 
-.diagonal {
-  background-color: #000000;
-  background-image: -webkit-linear-gradient(35deg, #000000 65%, #0C0C0C 0%);
+.App {
+  background: var(--secondaryLight);
+  background: radial-gradient(50% 25% at 43% 18%, var(--secondaryLighter) 0%, var(--secondaryLight) 50%);
   height: 300vh;
   position: absolute;
   width: 100vw;
@@ -44,7 +44,7 @@ header.header {
 }
 
 .logo {
-  width: calc(1rem + 7vw);
+  width: calc(1rem + 5vw);
   height: auto;
 }
 
@@ -63,7 +63,7 @@ ul.menu {
   text-decoration: none;
   font-family: 'Karla';
   font-weight: 200;
-  font-size: calc(1rem + 0.1vw);
+  font-size: calc(1rem + 0.05vw);
 }
 
 .menu li a:hover {
@@ -73,13 +73,17 @@ ul.menu {
 
 .hero {
   display: flex;
+  height: auto;
+  width: 100%;
+  align-items: flex-end;
+  flex-direction: row-reverse;
 }
 
 .hero-text {
   color: white;
   display: flex;
   flex-direction: column;
-  padding: 12% 10%;
+  padding: 12% 5%;
   width: 100%;
 }
 
@@ -107,14 +111,30 @@ ul.menu {
   padding: 15px 0 0 15px;
 }
 
+.cta-btns {
+  display: flex;
+}
+
 .hero-btn {
-  background-color: var(--primary);
-  color: var(--secondary);
-  width: 100px;
-  padding: 10px 0;
-  margin: 20px 0 0 10px;
+  width: 134px;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 20px 20px;
+  margin: 20px 20px 0 10px;
   text-align: center;
-  border-radius: 20px;
+  border-radius: 30px;
+  display: block;
+}
+
+.hero-btn:nth-child(1){
+  background-color: var(--primary);
+  color: var(--light);
+}
+
+.hero-btn:nth-child(2){
+  background-color: var(--secondary);
+  border: 0.1em solid var(--secondaryLighter);
+  color: var(--light);
 }
 
 
@@ -122,18 +142,17 @@ ul.menu {
 
 .scene {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  height: auto;
+  justify-content: flex-end;
+  align-items: flex-end;
   width: 100%;
 }
 
 .phones {
-  width: 100%;
-  height: 100%;
-  max-width: 322px;
-  min-height:630px;
-  max-height: 630px;
+  width: auto;
+  height: auto;
+  max-width: 396px;
+  min-height: 701px;
+  max-height: 701px;
   object-fit: cover;
   object-position: 0 50%;
 }
