@@ -3,7 +3,7 @@ import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/all';
 import { useEffect, useRef } from 'react';
 
-const Service = () => {
+const Services = () => {
 
   const ref = useRef(null);
 
@@ -57,4 +57,4 @@ const Service = () => {
     )
 }
 
-export default Service
+export default Services

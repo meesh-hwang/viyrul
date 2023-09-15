@@ -1,37 +1,33 @@
-import logo from './assets/img/logo.png';
-import './App.css';
-import Phone from './components/Phone';
-import Service from './components/Service';
+import './styles/App.css';
+import Services from './components/Services';
+import Loader from './components/Loader';
+import Header from './components/Header';
+import Hero from './components/Hero';
+import { useState, useEffect } from 'react';
 
 function App() {
-  
 
+  const [loading, setLoading] = useState(false);
+
+  useEffect(() => {
+      setLoading(true);
+      setTimeout(() => {
+          setLoading(false);
+      }, 2000);
+      }, []);
 
   return (
     <div className="App">
-      <header className="header">
-        <img src={logo} className="logo" alt="logo" />
-        <ul className='menu'>
-          <li><a href='meeshhwang.ca'>Contact</a></li>
-          <li><a href='meeshhwang.ca'>About</a></li>
-          <li><a href='meeshhwang.ca'>Services</a></li>
-        </ul>
-      </header>
-
-      <div className='hero'>
-        <div className='hero-text'>
-          <div className='hero-h1'>
-            <h1>Memamomamoo <br></br>mameemomoomame</h1>
-          </div>
-          <p>Memamomemamomemamomemamomema <br></br>Memameomamemoamemaomeamemaoemameo <br></br>Mamemeomemaomemaemoemae</p>
-          <div className='cta-btns'>
-            <a className='hero-btn' href='#'>Book a Consultation</a>
-            <a className='hero-btn' href='#'>Contact Us</a>
-          </div>
-        </div>
-        <Phone />
-      </div>
-      <Service />
+      {loading ? (
+        <>{document.body.style.overflow = "hidden"}
+        <Loader /></>
+        ) :
+        <div className='app-container'>
+          {document.body.style.overflowY = "auto"}
+          <Header /> 
+          <Hero />
+          <Services />
+        </div>}
     </div>
   );
 }
