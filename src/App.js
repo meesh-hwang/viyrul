@@ -12,9 +12,9 @@ function App() {
       <header className="header">
         <img src={logo} className="logo" alt="logo" />
         <ul className='menu'>
-          <li><a href='#'>Contact</a></li>
-          <li><a href='#'>About</a></li>
-          <li><a href='#'>Services</a></li>
+          <li><a href='meeshhwang.ca'>Contact</a></li>
+          <li><a href='meeshhwang.ca'>About</a></li>
+          <li><a href='meeshhwang.ca'>Services</a></li>
         </ul>
       </header>
 
