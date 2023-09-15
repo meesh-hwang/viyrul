@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/viyrul/static/css/main.d4990ee0.css",
-    "main.js": "/viyrul/static/js/main.fe365321.js",
+    "main.css": "/viyrul/static/css/main.0a917423.css",
+    "main.js": "/viyrul/static/js/main.60d72016.js",
     "static/js/787.677bcf55.chunk.js": "/viyrul/static/js/787.677bcf55.chunk.js",
     "static/media/phones.png": "/viyrul/static/media/phones.57f8a5dcc2ebb36f4976.png",
     "static/media/Karla-VariableFont_wght.woff2": "/viyrul/static/media/Karla-VariableFont_wght.a2b242980c58301f75ab.woff2",
     "static/media/hand-holding-seeding.svg": "/viyrul/static/media/hand-holding-seeding.733722e99145901f330a479abd0781d8.svg",
     "index.html": "/viyrul/index.html",
-    "main.d4990ee0.css.map": "/viyrul/static/css/main.d4990ee0.css.map",
-    "main.fe365321.js.map": "/viyrul/static/js/main.fe365321.js.map",
+    "main.0a917423.css.map": "/viyrul/static/css/main.0a917423.css.map",
+    "main.60d72016.js.map": "/viyrul/static/js/main.60d72016.js.map",
     "787.677bcf55.chunk.js.map": "/viyrul/static/js/787.677bcf55.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.d4990ee0.css",
-    "static/js/main.fe365321.js"
+    "static/css/main.0a917423.css",
+    "static/js/main.60d72016.js"
   ]
 }
