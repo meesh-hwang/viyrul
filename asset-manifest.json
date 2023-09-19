@@ -1,18 +1,19 @@
 {
   "files": {
-    "main.css": "/viyrul/static/css/main.0a917423.css",
-    "main.js": "/viyrul/static/js/main.60d72016.js",
+    "main.css": "/viyrul/static/css/main.f3f217e8.css",
+    "main.js": "/viyrul/static/js/main.7d6fdcf5.js",
     "static/js/787.677bcf55.chunk.js": "/viyrul/static/js/787.677bcf55.chunk.js",
     "static/media/phones.png": "/viyrul/static/media/phones.57f8a5dcc2ebb36f4976.png",
     "static/media/Karla-VariableFont_wght.woff2": "/viyrul/static/media/Karla-VariableFont_wght.a2b242980c58301f75ab.woff2",
+    "static/media/FamiljenGrotesk-VariableFont_wght.woff2": "/viyrul/static/media/FamiljenGrotesk-VariableFont_wght.d7cf80a7399ac39cecc4.woff2",
     "static/media/hand-holding-seeding.svg": "/viyrul/static/media/hand-holding-seeding.733722e99145901f330a479abd0781d8.svg",
     "index.html": "/viyrul/index.html",
-    "main.0a917423.css.map": "/viyrul/static/css/main.0a917423.css.map",
-    "main.60d72016.js.map": "/viyrul/static/js/main.60d72016.js.map",
+    "main.f3f217e8.css.map": "/viyrul/static/css/main.f3f217e8.css.map",
+    "main.7d6fdcf5.js.map": "/viyrul/static/js/main.7d6fdcf5.js.map",
     "787.677bcf55.chunk.js.map": "/viyrul/static/js/787.677bcf55.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.0a917423.css",
-    "static/js/main.60d72016.js"
+    "static/css/main.f3f217e8.css",
+    "static/js/main.7d6fdcf5.js"
   ]
 }
