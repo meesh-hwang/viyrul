@@ -1,13 +1,14 @@
-h1{
+.loader-container h1{
     color: #B2B2B2;
     font-weight: 800;
 }
 
-h2{
+.loader-container h2{
     color: #8a8a8a;
 }
 
-.container {
+.loader-container {
+    margin-top: -20px;
     height: 100vh;
     display: flex;
     flex-direction: column;

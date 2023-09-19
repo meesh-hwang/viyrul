@@ -41,7 +41,7 @@ function Phone() {
   return (
 
     <div className="scene" ref={ref}>
-      <img className='phones' src={phones} />
+      <img className='phones' alt='Phone with notifications' src={phones} />
     </div>
 
   );

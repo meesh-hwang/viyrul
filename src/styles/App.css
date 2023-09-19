@@ -6,19 +6,25 @@ Primary Lighter - #FFD977
 Secondary - #000000
 Secondary Light - #B2B2B2
 Secondary Lighter - #1F1F1F
+middle: #7C7C7C;
+darkText: #545454;
 Light - #E0E0E0
-
+lighter: #E0E0E0;
+white: #ffffff;
 */
+
 
 :root {
   --primary: #6d5008;
-  --primaryLight: #7c5c0a;
+  --primaryLight: #c28b00;
   --primaryLighter: #FFD977;
   --secondary: #000000;
   --secondaryLight: #0C0C0C;
-  --secondaryLighter: #1F1F1F;
+  --secondaryLighter: #282828;
+  --middle: #7C7C7C;
+  --darkText: #545454;
   --light: #B3B3B3;
-  --ligher: #E0E0E0;
+  --lighter: #E0E0E0;
   --white: #ffffff;
 }
 
@@ -28,19 +34,28 @@ a {
 
 
 .App {
-  background: var(--secondaryLight);
-  background: radial-gradient(50% 25% at 43% 18%, var(--secondaryLighter) 0%, var(--secondaryLight) 50%);
+  background: var(--light);
   height: 300vh;
   position: absolute;
   width: 100vw;
   z-index: -1;
 }
 
+.app-container:nth-child(1){
+  visibility: hidden;
+}
+
+.app-container > * {
+  visibility: visible;
+}
+
 header.header {
   justify-content: space-between;
   align-items: flex-end;
   display: flex;
-  padding: 4vh 4vw 0 4vw;
+  padding: 4vh 4vw 1.5vh 4vw;
+  background-color: var(--secondaryLighter);
+  margin-top: -20px;
 }
 
 .logo {
@@ -55,21 +70,23 @@ ul.menu {
 }
 
 .menu li {
-  padding-left: 100px;
+  padding-left: 90px;
 }
 
 .menu li a {
   color: white;
   text-decoration: none;
   font-family: 'Karla';
-  font-weight: 200;
-  font-size: calc(1rem + 0.05vw);
+  font-weight: 400;
+  font-size: calc(1rem + 0.07vw);
 }
 
 .menu li a:hover {
-  color: #FFD977;
+  color: var(--primaryLighter);
 }
 
+
+/* HERO */
 
 .hero {
   display: flex;
@@ -77,38 +94,42 @@ ul.menu {
   width: 100%;
   align-items: flex-end;
   flex-direction: row-reverse;
+  padding-top: 5vh;
 }
 
 .hero-text {
   color: white;
   display: flex;
   flex-direction: column;
-  padding: 12% 5%;
+  padding: 10% 5%;
   width: 100%;
 }
 
 .hero-h1 {
-  border-left: 4px solid var(--primary);
-  height: 100px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  color: var(--middle);
+  padding-bottom: 10px;
 }
 
 .hero-text h1 {
-  font-family: 'Karla';
-  font-weight: 200;
-  font-size: calc(1rem + 1.3vw);
+  font-family: 'familjen grotesk';
+  font-weight: 100;
+  font-size: calc(1rem + 1.8vw);
   line-height: 60px;
-  padding-left: 10px;
-  text-transform: capitalize;
+  margin: 0;
+}
+
+.emph {
+  color: #ffffff;
+  font-weight: 900;
 }
 
 .hero-text p {
   font-weight: 100;
   line-height: 35px;
   font-size: calc(1rem + 0.2vw);
-  padding: 15px 0 0 15px;
+  color: var(--darkText);
 }
 
 .cta-btns {
@@ -116,27 +137,25 @@ ul.menu {
 }
 
 .hero-btn {
-  width: 134px;
+  width: 250px;
   font-size: 14px;
   font-weight: 600;
-  padding: 20px 20px;
-  margin: 20px 20px 0 10px;
+  padding: 15px 20px;
+  margin: 20px 20px 0 0;
   text-align: center;
-  border-radius: 30px;
+  border-radius: 5px;
   display: block;
+  color: var(--lighter);
+  background-color: var(--primaryLight);
+  box-shadow: 3px 5px 15px rgba(0, 0, 0, 0.342);
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
 }
 
-.hero-btn:nth-child(1){
+.hero-btn:hover{
   background-color: var(--primary);
-  color: var(--light);
+  box-shadow: 3px 5px 15px rgba(0, 0, 0, 0.411);
 }
-
-.hero-btn:nth-child(2){
-  background-color: var(--secondary);
-  border: 0.1em solid var(--secondaryLighter);
-  color: var(--light);
-}
-
 
 /* scroll */
 

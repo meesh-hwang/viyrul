@@ -19,11 +19,13 @@ function App() {
   return (
     <div className="App">
       {loading ? (
-        <>{document.body.style.overflow = "hidden"}
-        <Loader /></>
+      <div className='app-container'>
+        {document.body.style.overflow="hidden"}
+        <Loader />
+      </div>
         ) :
         <div className='app-container'>
-          {document.body.style.overflowY = "auto"}
+          {document.body.style.overflowY="auto"}
           <Header /> 
           <Hero />
           <Services />
