@@ -1,60 +1,22 @@
-import handIcon from '../assets/img/hand-holding-seeding.svg'
-import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/all';
-import { useEffect, useRef } from 'react';
+import Phone from './Phone';
+import laptop from '../assets/img/laptops.png';
+import phones from '../assets/img/phones.png';
 
 const Services = () => {
 
-  const ref = useRef(null);
-
-//   useEffect(() => {
-
-//     let ctx = gsap.context(() => {
-
-//     gsap.registerPlugin(ScrollTrigger);
-//     const element = ref.current;
-
-//     let frameCount = 17;
-//     let offsetValue = 198;
-
-//     gsap.to(
-//     element.querySelector(".service"),
-//     {
-//       duration: 2,
-    
-//       scrollTrigger: {
-//         trigger: '.services',
-//         start: "top top",
-//         end: "bottom",
-//         pin: true,
-//         scrub: true
-//       },
-//     }
-//   );
-//     },);
-//     return () => ctx.revert();
-// }, []);
-
-
     return(
-    <div className='services' ref={ref}>
-        <div className='service'>
-          <img src={handIcon} className='service-icon'/>
-          <h2>Pussy Marketing</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent pulvinar lectus in quam dictum suscipit. Morbi ultrices malesuada arcu, in dictum ante vulputate ut. Donec eget nibh enim.</p>
+    <div className='services'>
+      <div className='services-container'>
+        <div className='services-text'>
+          <h3>Quality Services</h3>
+          <h2>What We Do</h2>
+          <p>From online orders, client management, lead generation, and more, we do everything while you focus on providing the best products and services to your customers and clients.</p>
+          <div><a href='#' className='btn'>Services</a></div>
         </div>
-        <div className='service'>
-          <img src={handIcon} className='service-icon'/>
-          <h2>Pussy Marketing</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent pulvinar lectus in quam dictum suscipit. Morbi ultrices malesuada arcu, in dictum ante vulputate ut. Donec eget nibh enim.</p>
-        </div>
-        <div className='service'>
-          <img src={handIcon} className='service-icon'/>
-          <h2>Pussy Marketing</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent pulvinar lectus in quam dictum suscipit. Morbi ultrices malesuada arcu, in dictum ante vulputate ut. Donec eget nibh enim.</p>
-        </div>
+        <Phone />
+      </div>
     </div>
     )
-}
+} 
 
 export default Services

@@ -1,13 +1,13 @@
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/all';
-import { useEffect, useRef } from 'react';
+import { useLayoutEffect, useRef } from 'react';
 import phones from '../assets/img/phones.png';
 
-function Phone() {
+const Phone = () => {
 
   const ref = useRef(null);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
 
     let ctx = gsap.context(() => {
 
@@ -25,26 +25,23 @@ function Phone() {
       duration: 1,
     
       scrollTrigger: {
-        trigger: '.App',
-        start: "top top",
+        trigger: '.services',
+        start: "center center",
         end: "+=" + (frameCount * offsetValue),
         pin: true,
         scrub: true
       },
     }
   );
-    },);
+    });
     return () => ctx.revert();
 }, []);
 
 
   return (
-
     <div className="scene" ref={ref}>
       <img className='phones' alt='Phone with notifications' src={phones} />
     </div>
-
-  );
-
+  )
 }
 export default Phone;

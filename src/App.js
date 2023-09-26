@@ -1,9 +1,11 @@
 import './styles/App.css';
-import Services from './components/Services';
 import Loader from './components/Loader';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import { useState, useEffect } from 'react';
+import Services from './components/Services';
+import About from './components/About';
+import Footer from './components/Footer';
 
 function App() {
 
@@ -29,6 +31,8 @@ function App() {
           <Header /> 
           <Hero />
           <Services />
+          <About />
+          <Footer />
         </div>}
     </div>
   );
