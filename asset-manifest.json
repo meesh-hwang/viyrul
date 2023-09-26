@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.css": "/viyrul/static/css/main.f3f217e8.css",
-    "main.js": "/viyrul/static/js/main.7d6fdcf5.js",
+    "main.css": "/viyrul/static/css/main.d09386d1.css",
+    "main.js": "/viyrul/static/js/main.e7ef828e.js",
     "static/js/787.677bcf55.chunk.js": "/viyrul/static/js/787.677bcf55.chunk.js",
     "static/media/phones.png": "/viyrul/static/media/phones.57f8a5dcc2ebb36f4976.png",
+    "static/media/laptops.png": "/viyrul/static/media/laptops.7f0f59a526b99fa7d95f.png",
     "static/media/Karla-VariableFont_wght.woff2": "/viyrul/static/media/Karla-VariableFont_wght.a2b242980c58301f75ab.woff2",
     "static/media/FamiljenGrotesk-VariableFont_wght.woff2": "/viyrul/static/media/FamiljenGrotesk-VariableFont_wght.d7cf80a7399ac39cecc4.woff2",
-    "static/media/hand-holding-seeding.svg": "/viyrul/static/media/hand-holding-seeding.733722e99145901f330a479abd0781d8.svg",
     "index.html": "/viyrul/index.html",
-    "main.f3f217e8.css.map": "/viyrul/static/css/main.f3f217e8.css.map",
-    "main.7d6fdcf5.js.map": "/viyrul/static/js/main.7d6fdcf5.js.map",
+    "main.d09386d1.css.map": "/viyrul/static/css/main.d09386d1.css.map",
+    "main.e7ef828e.js.map": "/viyrul/static/js/main.e7ef828e.js.map",
     "787.677bcf55.chunk.js.map": "/viyrul/static/js/787.677bcf55.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.f3f217e8.css",
-    "static/js/main.7d6fdcf5.js"
+    "static/css/main.d09386d1.css",
+    "static/js/main.e7ef828e.js"
   ]
 }
