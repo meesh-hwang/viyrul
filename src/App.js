@@ -1,12 +1,13 @@
 import './styles/App.css';
 import Loader from './components/Loader';
 import Header from './components/Header';
-import Hero from './components/Hero';
-import { useState, useEffect } from 'react';
-import Services from './components/Services';
-import About from './components/About';
 import Footer from './components/Footer';
-
+import { HashRouter, Route, Routes } from 'react-router-dom';
+import { useState, useEffect } from 'react';
+import Home from './pages/Home';
+import About from './pages/About';
+import Services from './pages/Services';
+import Contact from './pages/Contact';
 function App() {
 
   const [loading, setLoading] = useState(false);
@@ -28,14 +29,21 @@ function App() {
         ) :
         <div className='app-container'>
           {document.body.style.overflowY="auto"}
-          <Header /> 
-          <Hero />
-          <Services />
-          <About />
-          <Footer />
+          <HashRouter>
+            <Header />
+            <Routes>
+              <Route>
+                <Route index element={<Home />} />
+                <Route path="services" element={<Services />} />
+                <Route path="contact" element={<Contact />} />
+                <Route path="*" element={<About />} />
+              </Route>
+            </Routes>
+            <Footer />
+          </HashRouter>    
         </div>}
     </div>
   );
 }
-
+//HASH ROUTER ONLY FOR GHPAGES. FOR ACTUAL DEPLOYMENT USE BROWSERROUTER
 export default App;

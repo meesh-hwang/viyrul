@@ -1,3 +1,5 @@
+import { Outlet, Link } from "react-router-dom";
+
 const Hero = () => {
     return(
         <div className='hero'>
@@ -7,9 +9,10 @@ const Hero = () => {
                 </div>
                 <p>From online orders, client management, lead generation, <br/>and more, we do everything while you focus on providing the <br/>best products and services to your customers and clients. </p>
                 <div>
-                    <a className='btn' href='#'>Book a Consultation</a>
+                    <Link to="/contact" className='btn'>Book a Consultation</Link>
                 </div>
             </div>
+            <Outlet />
         </div>
     )
 }

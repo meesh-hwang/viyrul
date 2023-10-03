@@ -270,17 +270,18 @@ ul.menu {
   height: 300px;
   padding: calc(1rem + 1.3vw);
   margin: calc(1rem + 1vw);
+  box-shadow: 5px 7px 10px rgba(0, 0, 0, 0.342);
 }
 
 .about-cards div img {
   max-width: 100px;
 }
 
-.about-cards div:nth-child(odd) {
+.about-cards div:nth-child(even) {
   margin-top: 100px;
 }
 
-.about-cards div:nth-child(even) {
+.about-cards div:nth-child(odd) {
   margin-bottom: 100px;
 }
 
@@ -339,6 +340,10 @@ ul.menu {
   padding-top: 50px;
 }
 
+.footer-links li {
+  list-style-type: none;
+}
+
 .footer-links a {
   margin-left: 20px;
   margin-right: 20px;
@@ -353,4 +358,101 @@ ul.menu {
 .footer span {
   margin:auto;
   padding-top: 50px;
+}
+
+/* CONTACT FORM */ 
+
+form.contact-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 6vh;
+}
+
+input, textarea{
+  border: #C58E00 1px solid;  
+  padding-block: 20px;
+  padding-inline: 20px;
+  width: calc(1rem + 35vw);
+  border-radius: 0;
+  font-family: 'familjen grotesk', sans-serif;
+}
+
+input[type=text]:focus, textarea:focus {
+  border-radius: 0;
+  border: #FFD977 1px solid;   
+}
+
+button.contact-btn {
+  margin-top: 30px;
+  padding: 25px;
+  background-color: #C58E00;
+  border: none;
+  width: calc(1rem + 18vw);
+  font-size: calc(1rem + 0.15vw);
+  font-family: 'familjen grotesk', sans-serif;
+  font-weight: 100;
+  color: white;  
+  box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.342);
+  cursor: po;
+}
+
+button.contact-btn:hover {
+  background-color: #FFD977;
+  color: #282828;
+  box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.2);
+}
+
+/*PAGES*/
+
+
+.pg-title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 10.5vw;
+  position: absolute;
+}
+
+.pg-title h1 {
+  transform: rotate(-90deg);
+  width: fit-content;
+  padding: 0.5vw 2vh 1vw 2vh;
+  color: var(--darkText);
+  font-weight: 100;
+  font-size: calc(1rem + 1vw);
+}
+
+.pg-title hr {
+  border-left: 1px solid var(--primaryLight);
+  height: 20vh; 
+  display: inline-block;
+  margin-bottom: 1vh;
+  margin-top: 1vh;
+}
+
+.pg-title hr:nth-child(1) {
+  height: 7vh;
+}
+
+.contact-container {
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+  margin: auto;
+  margin-top: 6vh;
+  font-size: calc(1rem + 0.3vw);
+}
+
+.contact-container h3 {
+  line-height: 0;
+  color: var(--darkText);
+}
+
+.contact-container h3 a {
+  color: var(--primaryLight)
+}
+
+.contact-container h3 a:hover {
+  color: var(--primaryLighter);
 }

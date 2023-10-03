@@ -1,6 +1,5 @@
 import Phone from './Phone';
-import laptop from '../assets/img/laptops.png';
-import phones from '../assets/img/phones.png';
+import { Outlet, Link } from "react-router-dom";
 
 const Services = () => {
 
@@ -11,10 +10,11 @@ const Services = () => {
           <h3>Quality Services</h3>
           <h2>What We Do</h2>
           <p>From online orders, client management, lead generation, and more, we do everything while you focus on providing the best products and services to your customers and clients.</p>
-          <div><a href='#' className='btn'>Services</a></div>
+          <div><Link to="/services" className='btn'>Services</Link></div>
         </div>
         <Phone />
       </div>
+      <Outlet />
     </div>
     )
 } 

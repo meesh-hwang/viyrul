@@ -1,6 +1,7 @@
 import logo from '../assets/img/logo-slogan.png';
 import mail from '../assets/img/icons/mail.png';
 import instagram from '../assets/img/icons/instagram.png';
+import { Outlet, Link } from "react-router-dom";
 import phone from '../assets/img/icons/phone.png';
 
 const Footer = () => {
@@ -8,31 +9,31 @@ const Footer = () => {
     return(
         <div className="footer">
             <div className="footer-content">
-                <a href='#'>
+                <Link to='/'>
                     <img src={logo} alt='Viyrul logo with slogan' />
-                </a>
+                </Link>
                 <div className='socials'>
                     <div>
                         <img src={mail} alt='Email logo' />
-                        <a href='mailto:viyrulmarketingco@gmail.com'>viyrulmarketingco@gmail.com</a>
+                        <Link to='mailto:viyrulmarketingco@gmail.com'>viyrulmarketingco@gmail.com</Link>
                     </div>
                     <div>
                         <img src={phone} alt='Phone logo' />
-                        <a href='#'>+1 (778) 123 4567</a>
+                        <Link to='/'>+1 (778) 123 4567</Link>
                     </div>
                     <div>
                         <img src={instagram} alt='Instagram logo' />
-                        <a href='#'>Instagram</a>
+                        <Link to='https://www.instagram.com/viyrul/'>Instagram</Link>
                     </div>
                 </div>
             </div>
             <div className='footer-links'>
-                <a href='#'>Contact</a>
-                <a href='#'>Services</a>
-                <a href='#'>About</a>
-                <a href='#'>Style Guide</a>
+                <li><Link to="/contact">Contact</Link></li>
+                <li><Link to="/about">About</Link></li>
+                <li><Link to="/services">Services</Link></li>
             </div>
             <span>© Copyright Viyrul 2023</span>
+            <Outlet />
         </div>
     );
 }
