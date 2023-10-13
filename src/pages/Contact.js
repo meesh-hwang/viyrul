@@ -1,19 +1,20 @@
 import ContactForm from "../components/ContactForm"
+import '../styles/contact.css'
 
 const Contact = () => {
     return(
-        <div>
-            <div className="pg-title">
-                <hr/>
-                <h1>Contact</h1>
-                <hr/>
+        <div className="pg-container contact">
+            <div className="contact-text">
+                <h1 className="pg-title">Contact Us</h1>
+                <div>
+                    <h2>We want to <br />hear from <span className="emph">you</span>.<br /> Let us know <br />how we can <br />help.</h2>
+                    <p>Contact us using the form or email us at <br /><a href="mailto:contact@viyrul.com
+                    ">contact@viyrul.com
+                    </a></p>
+                </div>
             </div>
-            <div className="contact-container">
-                <h2>How can we help you?</h2>
-                <h3>Phone: <a href="tel:7781234567"> (778) 123 - 4567</a></h3>
-                <h3>Email: <a href="viyrulmarketingco@gmail.com"> viyrulmarketingco@gmail.com</a></h3>
-                <ContactForm />
-            </div>
+            <div className="circle-gradient"></div> 
+            <ContactForm />
         </div>
     )
 }

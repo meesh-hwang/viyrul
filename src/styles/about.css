@@ -1,0 +1,83 @@
+.about-blurb {
+    margin-bottom: 3em;
+}
+
+.about-blurb h2 {
+    color: var(--light);
+    font-weight: 900;
+    font-size: 1.3em;
+}
+
+.about-blurb p {
+    color: var(--light);
+    font-weight: 700;
+    line-height: 1.7;
+    font-size: 0.8em;
+}
+
+.about h3{
+    font-size: 1.2em;
+    font-weight: 900;
+}
+
+.team {
+    display: flex;
+    flex-direction: column;
+    gap: 2.4em;
+    align-items: center;
+    margin-bottom: 3em;
+}
+
+.member {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3em;
+    width: 100%;
+    padding: 3em 0;
+    background-color: var(--black);
+    box-shadow: 2px 2px 30px #5d26f62c;
+    border-radius: 20px;
+}
+
+.member p {
+    font-size: 0.6em;
+    line-height: 1.8;
+    color: var(--light);
+    font-weight: 700;
+    margin: 0;
+    width: 25em;
+}
+
+.member .img {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.member img {
+    width: 8em;
+}
+
+.member h4 {
+    line-height: 0;
+    margin-block-end: 0;
+    font-size: 0.66em;
+}
+
+.member h5 {
+    line-height: 0;
+    font-size: 0.56em;
+    color: var(--primary);
+}
+
+.about .circle-gradient {
+    padding-top: 10px;
+    margin-top: -5em;
+    right: 14em;
+    z-index: -1;
+    background: radial-gradient(12% 30% at 60% 45%, rgba(93, 38, 246, 0.219) 0%, rgba(92, 38, 246, 0) 100%);
+    position: absolute;
+    width: 68em;
+    height: 25em;
+}

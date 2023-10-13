@@ -57,46 +57,50 @@ import emailjs from '@emailjs/browser';
     return (
         <form className="contact-form" onSubmit={handleSubmit}>
             <div>
+                <label htmlFor="name">Full Name</label>
                 <input 
                     onChange={(e) => setFormValues({ ...formValues, name: e.target.value })}
                     type="text" 
                     id="name" 
                     name="name" 
                     value={formValues.name}
-                    placeholder="NAME"
+                    placeholder="John Smith"
                     required />
             </div>
             <div>
+                <label htmlFor="email">Email</label>
                 <input 
                     onChange={(e) => setFormValues({ ...formValues, email: e.target.value })}
                     type="email" 
                     id="email" 
                     name="email" 
                     value={formValues.email}
-                    placeholder="EMAIL"
+                    placeholder="john@gmail.com"
                     required />
             </div>
             <div>
+                <label htmlFor="subject">Subject</label>
                 <input 
                     onChange={(e) => setFormValues({ ...formValues, subject: e.target.value })}
                     type="text" 
                     id="subject" 
                     name="subject" 
                     value={formValues.subject}
-                    placeholder="SUBJECT"
+                    placeholder="Re: Meeting"
                     required />
             </div>
             <div>
+                <label htmlFor="message">Message</label>
                 <textarea 
                     onChange={(e) => setFormValues({ ...formValues, message: e.target.value })}
                     id="message" 
                     name="message" 
                     value={formValues.message} 
-                    placeholder="MESSAGE"
-                    cols="30" rows="15" 
+                    placeholder="Type your message here"
+                    cols="30" rows="10" 
                     required />
             </div>
-            <button type="submit" className="contact-btn">SEND</button>
+            <button type="submit" className="btn">Send</button>
         </form>
     );
 };

@@ -1,18 +1,22 @@
 import Phone from './Phone';
 import { Outlet, Link } from "react-router-dom";
+import arrow from '../assets/img/arrow.png';
 
 const Services = () => {
 
     return(
     <div className='services'>
       <div className='services-container'>
-        <div className='services-text'>
-          <h3>Quality Services</h3>
-          <h2>What We Do</h2>
-          <p>From online orders, client management, lead generation, and more, we do everything while you focus on providing the best products and services to your customers and clients.</p>
-          <div><Link to="/services" className='btn'>Services</Link></div>
-        </div>
+        <div className='circle-gradient'></div>
         <Phone />
+        <div className='services-text'>
+          <p>We offer a variety<br/> of services to help<br/> you bring your<br/> business <span className='emph'> online</span></p>
+          <div>
+            <Link to="/services" className='pg-link'>
+              Services <img src={arrow} alt='arrow' />
+            </Link>
+          </div>  
+        </div>
       </div>
       <Outlet />
     </div>

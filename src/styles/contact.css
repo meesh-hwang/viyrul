@@ -1,0 +1,99 @@
+/* CONTACT FORM */ 
+
+.pg-container.contact {
+    flex-direction: row;
+    justify-content: center;
+    gap: 5em;
+}
+
+.contact h2 {
+    font-weight: 900;
+    font-size: 1.3em;
+    line-height: 1.4;
+}
+
+.contact p {
+    font-size: 0.6em;
+    color: var(--light);
+    font-weight: 300;
+    line-height: 1.5;
+}
+
+.contact a {
+    color: var(--light);
+    font-weight: 500;
+    text-decoration: underline;
+}
+
+.contact a:hover {
+    color: var(--primaryLight)
+}
+
+.contact-form label {
+    font-size: 0.48em;
+    font-weight: 400;
+}
+
+form.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.9em;
+    align-items: center;
+    background-color: var(--black);
+    padding: 2em 1.56em;
+    border-radius: 40px;
+    box-shadow: 2px 2px 30px #5d26f62c;
+  }
+
+  form.contact-form div {
+    display: flex;
+    flex-direction: column;
+    gap: 0.38em;
+  }
+  
+  input, textarea{
+    background-color: var(--secondary);
+    padding-block: 1em;
+    padding-inline: 1.4em;
+    width: 35em;
+    border-radius: 14px;
+    border: solid 1px var(--primary);   
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.4em;
+    color: var(--light);
+    border: none;
+  }
+  
+  input[type=text], textarea, input[type=email]{
+    border: solid 1px var(--primary);   
+  }
+  
+  .contact-form button.btn {
+    margin-top: 1em;
+    padding: 1em;
+    border: none;
+    width: 14em;
+    background-color: var(--primary);
+    font-size: 0.56em;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    color: white;  
+    box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.342);
+    cursor: pointer;
+    border-radius: 20px;
+  }
+  
+  button.btn:hover {
+    background-color: var(--primaryLighter);
+    color: var(--primary);
+  }
+  
+.contact .circle-gradient {
+    right: 15em;
+    margin-top: 0em;
+    background: radial-gradient(12% 30% at 60% 45%, rgba(93, 38, 246, 0.233) 0%, rgba(92, 38, 246, 0) 100%);
+    position: absolute;
+    width: 65em;
+    height: 25em;
+    z-index: -1;
+}
