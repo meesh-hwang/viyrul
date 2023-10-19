@@ -29,7 +29,7 @@ const Phone = () => {
         start: "center center",
         end: "+=" + (frameCount * offsetValue),
         pin: true,
-        scrub: true
+        scrub: true,
       },
     }
   );

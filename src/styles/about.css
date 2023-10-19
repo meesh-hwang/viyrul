@@ -1,5 +1,6 @@
 .about-blurb {
     margin-bottom: 3em;
+    margin-top: 2dvh;
 }
 
 .about-blurb h2 {
@@ -11,8 +12,9 @@
 .about-blurb p {
     color: var(--light);
     font-weight: 700;
-    line-height: 1.7;
-    font-size: 0.8em;
+    line-height: 1.8;
+    font-size: 0.88em;
+    text-align: center;
 }
 
 .about h3{
@@ -74,7 +76,7 @@
 .about .circle-gradient {
     padding-top: 10px;
     margin-top: -5em;
-    right: 14em;
+    right: 0%;
     z-index: -1;
     background: radial-gradient(12% 30% at 60% 45%, rgba(93, 38, 246, 0.219) 0%, rgba(92, 38, 246, 0) 100%);
     position: absolute;

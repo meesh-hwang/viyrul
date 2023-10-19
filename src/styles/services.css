@@ -6,45 +6,6 @@
     align-self: flex-start;
 }
 
-/*OUR PROCESS START*/
-.services-slider{
-    display: flex;
-    flex-wrap: wrap;
-    gap: 2em;
-    margin-top: 2em;
-    margin-bottom: 6em;
-}
-
-.process-card {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;    background-color: var(--black);
-    padding: 1.8em 1.8em 2em 1.8em;
-    box-shadow: 2px 4px 32px #5d26f65b;
-    border-radius: 30px;
-}
-
-.services-slider img {
-    width: 3em;
-}
-
-.services-slider h4 {
-    font-size: 0.8em;
-    margin-block-start: 1em;
-    margin-block-end: 0.6em;
-}
-
-.services-slider p {
-    margin-block-start: 0;
-    font-size: 0.58em;
-    line-height: 1.78;
-    text-align: center;
-    font-weight: 300;
-    color: var(--light);
-}
-
-/*OUR PROCESS END*/
 
 .services h2 {
     margin-top: 3em;

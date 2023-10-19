@@ -8,7 +8,6 @@ const About = () => {
             <h1 className="pg-title">About Us</h1>
             <div className='circle-gradient'></div>     
             <div className="about-blurb">
-                <h2>Who <span className="emph">we</span> are</h2>
                 <p>At <span className="emph">Viyrul</span>, we are passionate about<br /> turning your web dreams into reality.<br /> Our services are designed to help your<br />business thrive in the digital age.</p>
             </div>
             <div className='team'>
