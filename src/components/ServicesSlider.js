@@ -54,12 +54,12 @@ const cards = [
 const ServicesSlider = () => {
   const stageRef = useRef(null);
   const boxesRef = useRef([]);
-  let cardGap = 520;
-
+  
   useEffect(() => {
-    const stage = stageRef.current;
-    const boxes = boxesRef.current;
-    cardGap = Math.min(window.innerWidth / 1.8, 520);
+      const stage = stageRef.current;
+      const boxes = boxesRef.current;
+      let cardGap = 520;
+      cardGap = Math.min(window.innerWidth / 1.8, 520);
 
     gsap.set(stage, {
       css: {
