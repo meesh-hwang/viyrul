@@ -11,7 +11,7 @@ const Services = () => {
         <div className="pg-container services">
             <div className="circle-gradient"></div> 
             <h1 className="pg-title">Our Services</h1>
-            <h3 className='services-blurb'>We provide various services<br /> to help you take your <br />business <div className="emph">online</div></h3>
+            <h3 className='services-blurb'>We provide quality services<br /> to help you take your <br />business <div className="emph">online</div></h3>
             <ServicesCards />
             <h2>Our <span className='emph'>Process</span></h2>
             <ServicesSlider />

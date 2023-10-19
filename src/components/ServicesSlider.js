@@ -1,7 +1,12 @@
+
 import React, { useEffect, useRef } from 'react';
-import { gsap, Linear } from 'gsap';
+import { gsap } from 'gsap';
+import { Draggable } from 'gsap/all';
 import flexible from '../assets/img/icons/flexible.png';
-import '../styles/servicesSlider.css'
+import '../styles/servicesSlider.css';
+
+// Define onResize outside of the component
+
 
 const cards = [
   {
@@ -52,53 +57,99 @@ const cards = [
 ];
 
 const ServicesSlider = () => {
-  const stageRef = useRef(null);
+  gsap.registerPlugin(Draggable);
   const boxesRef = useRef([]);
-  
-  useEffect(() => {
-      const stage = stageRef.current;
-      const boxes = boxesRef.current;
-      let cardGap = 520;
-      cardGap = Math.min(window.innerWidth / 1.8, 520);
+  const wrapperRef = useRef();
+  const dragElRef = useRef();
+  const cardRef = (el) => {
+    if (boxesRef.current) {
+      boxesRef.current.push(el);
+    }
+  };
 
-    gsap.set(stage, {
-      css: {
-        perspective: 1100,
-        transformStyle: 'preserve-3d',
+  const onResize = (spin, boxes, dragAmount, cardGap, dragElRef, startProgress, progressLimit) => {
+
+    cardGap = Math.min(window.innerWidth / 1.8, 520);
+  
+    if (matchMedia("(max-width: 480px)").matches) {
+      dragAmount = -1500;
+    }
+  
+    if (spin) {
+      gsap.killTweensOf(spin);
+      spin.timeScale(0);
+      startProgress = spin.progress();
+    }
+  
+    spin = gsap.fromTo(
+      boxes,
+      {
+        rotationY: (i) => (i * 360) / boxes.length,
+      },
+      {
+        rotationY: "+=360",
+        transformOrigin: `50% 50% ${-cardGap}px`,
+        duration: 50,
+        ease: "none",
+        repeat: -1,
+      }
+    );
+  
+    // Create Draggable
+  
+    Draggable.create(dragElRef.current, {
+      trigger: [wrapperRef.current],
+      allowNativeTouchScrolling: true,
+      onPress() {
+        gsap.killTweensOf(spin);
+        spin.timeScale(0);
+        startProgress = spin.progress();
+      },
+      onDrag() {
+        let currentProgress = startProgress + (this.startX - this.x) / dragAmount;
+        spin.progress(progressLimit(currentProgress));
+      },
+      onRelease() {
+        if (!this.tween || !this.tween.isActive()) {
+          gsap.to(spin, { timeScale: 1, duration: 1 });
+        }
       },
     });
+  };
 
-    const duration = 30;
-    const totalCards = cards.length;
+  let dragAmount = -3000;
+  let cardGap = 520;
+  let startProgress;
+  let spin;
+  let progressLimit = gsap.utils.wrap(0, 1);
 
-    boxes.forEach((element, index) => {
-      const rotationY = (360 / totalCards) * index;
+  useEffect(() => {
+    onResize(spin, boxesRef.current, dragAmount, cardGap, dragElRef, startProgress, progressLimit);
 
-      gsap.set(element, {
-        css: {
-          rotationY,
-          transformOrigin: `50% 50% -${cardGap}px`,
-        },
-      });
+    const handleResize = () => {
+      onResize(spin, boxesRef.current, dragAmount, cardGap, dragElRef, startProgress, progressLimit);
+    };
 
-      gsap.to(element, {
-        duration,
-        css: {
-          z: 0.01,
-          rotationY: `+=360`,
-        },
-        repeat: -1,
-        ease: Linear.easeNone,
-      });
-    });
-  }, []);
+    // Add event listener
+    window.addEventListener("resize", handleResize);
+
+    // Call onResize when the component mounts
+    onResize(spin, boxesRef.current, dragAmount, cardGap, dragElRef, startProgress, progressLimit);
+
+    // Remove the event listener when the component unmounts
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, [spin, boxesRef, dragAmount, cardGap, dragElRef, startProgress, progressLimit]);
 
   return (
-      <div ref={stageRef} className="stage services-slider">
+    <div className='slider-container'>
+      <div ref={wrapperRef} className="stage services-slider">
+        <div ref={dragElRef} className='drag-el' ></div>
         {cards.map((card, index) => (
           <div
             key={index}
-            ref={(el) => (boxesRef.current[index] = el)}
+            ref={cardRef}
             className="box process-card"
           >
             <img src={card.img} alt={card.name} />
@@ -107,6 +158,7 @@ const ServicesSlider = () => {
           </div>
         ))}
       </div>
+    </div>
   );
 };
 

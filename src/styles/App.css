@@ -203,14 +203,13 @@ ul.menu {
   color: var(--light);
 }
 
-
 /*PAGES*/
 
 h1.pg-title  {
   width: fit-content;
   color: var(--primary);
   font-weight: 400;
-  font-size: 1em;
+  font-size: 0.6em;
 }
 
 .pg-container {

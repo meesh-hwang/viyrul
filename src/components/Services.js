@@ -10,7 +10,7 @@ const Services = () => {
         <div className='circle-gradient'></div>
         <Phone />
         <div className='services-text'>
-          <p>We offer a variety<br/> of services to help<br/> you bring your<br/> business <span className='emph'> online</span></p>
+          <p>We offer quality<br/> services to help<br/> you bring your<br/> business <span className='emph'> online</span></p>
           <div>
             <Link to="/services" className='pg-link'>
               Services <img src={arrow} alt='arrow' />

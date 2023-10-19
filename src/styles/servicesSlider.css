@@ -1,9 +1,17 @@
+  .slider-container {
+    height: 28em;
+  }
+  
   .stage {
+    position: relative;
     width: 100vw;
     height: 28em;
     color: #ddd;
     cursor:pointer;
-
+    top: 50%;
+    transform: translate(0, -50%);
+    transform-style: preserve-3d;
+    perspective: 1100px;
     display: flex;
     justify-content: center;
   }
@@ -22,12 +30,8 @@
     border-radius: 30px;
     margin: 3em; 
     overflow:hidden;
-  }
-
-  .box:hover {
-    background-color: rgb(0, 0, 0);
-    scale: 2;
-
+    left: 50%;
+      transform: translate3d(-50%, 0, 0);
   }
   
   .box > img {
