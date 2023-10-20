@@ -6,7 +6,7 @@ import phones from '../assets/img/phones.png';
 const Phone = () => {
 
   const ref = useRef(null);
-
+  const phoneRef = useRef();
   useLayoutEffect(() => {
 
     let ctx = gsap.context(() => {
@@ -15,24 +15,31 @@ const Phone = () => {
     const element = ref.current;
 
     let frameCount = 17;
-    let offsetValue = 198;
+    let phoneImg = phoneRef.current.offsetWidth;
+    let offsetValue = phoneImg / 2;
+    // phoneImg / 18 frames / 2
 
-    gsap.to(
-    element.querySelector(".phones"),
-    {
-      objectPosition: (-offsetValue * frameCount * 2) + "px 50%",
-      ease: "steps(" + frameCount + ")",
-      duration: 1,
-    
-      scrollTrigger: {
-        trigger: '.services',
-        start: "center center",
-        end: "+=" + (frameCount * offsetValue),
-        pin: true,
-        scrub: true,
-      },
+    try{
+      gsap.to(
+        element.querySelector(".phones"),
+        {
+          objectPosition: (-offsetValue * frameCount * 2) + "px 50%",
+          ease: "steps(" + frameCount + ")",
+          duration: 1,
+        
+          scrollTrigger: {
+            trigger: '.services',
+            start: "center center",
+            end: "+=" + (frameCount * offsetValue),
+            pin: true,
+            scrub: true,
+          },
+        }
+      );
+    }catch(error) {
+      console.log(error)
     }
-  );
+    
     });
     return () => ctx.revert();
 }, []);
@@ -40,7 +47,7 @@ const Phone = () => {
 
   return (
     <div className="scene" ref={ref}>
-      <img className='phones' alt='Phone with notifications' src={phones} />
+      <img className='phones' ref={phoneRef} alt='Phone with notifications' src={phones} />
     </div>
   )
 }

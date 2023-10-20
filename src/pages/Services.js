@@ -5,8 +5,6 @@ import ServicesSlider from '../components/ServicesSlider';
 
 const Services = () => {
 
-
-
     return(
         <div className="pg-container services">
             <div className="circle-gradient"></div> 

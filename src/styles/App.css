@@ -13,7 +13,6 @@ Light: #F8F8F8;
 white: #ffffff;
 */
 
-html { font-size: calc(1em + 1vw); }
 
 :root {
   --primary: rgb(92, 38, 246);
@@ -32,6 +31,19 @@ html { font-size: calc(1em + 1vw); }
 
 html {
   background: var(--secondary);
+}
+
+
+html { 
+  font-size: calc(1em + 1vw); 
+
+  @media (max-width: 767px) {
+    font-size: calc(1em + 0.6vw); 
+    
+  }
+  @media (max-width: 519px) {
+    font-size: calc(1em + 0.4vw); 
+  }
 }
 
 a {
@@ -72,6 +84,7 @@ p {
 .pg-link {
   display: flex;
   align-items: center;
+  justify-content: center;
   font-weight: 400;
   color: var(--primary);
   font-size: 0.66em;
@@ -148,6 +161,7 @@ ul.menu {
 
 .menu li a:hover {
   color: var(--primaryLighter);
+  text-decoration: underline;
 }
 
 .menu li a:focus {
@@ -209,12 +223,20 @@ h1.pg-title  {
   width: fit-content;
   color: var(--primary);
   font-weight: 400;
-  font-size: 0.6em;
+  font-size: 0.68em;
+  line-height: 0;
 }
 
 .pg-container {
   display: flex;
   flex-direction: column;
   margin: auto;
-  padding: 2.4em 8em
+  padding: 2.4em 8em;
+
+  @media (max-width: 767px) {
+    padding: 2em 2em;
+  }
+  @media (max-width: 400px) {
+    color: red;
+  }
 }

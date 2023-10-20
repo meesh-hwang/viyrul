@@ -14,7 +14,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 8em 1em;
+    padding: 8em 0;
     width: 100%;
 }
 
@@ -62,9 +62,9 @@ img.globe {
 .phones {
     width: auto;
     height: auto;
-    max-width: 396px;
-    min-height: 701px;
-    max-height: 701px;
+    max-width: 12.428em;
+    min-height: 21.9em;
+    max-height: 21.9em;
     object-fit: cover;
     object-position: 0 50%;
 }
@@ -86,6 +86,10 @@ img.globe {
     margin: auto;
 }
 
+.services-container.mobile {
+    flex-direction: column;
+}
+
 .services-text {
     padding: 0 1em 0 2em;
 }
@@ -95,6 +99,9 @@ img.globe {
     font-size: 1.4em;
     line-height: 1.1;
     font-weight: 500;
+    @media (max-width: 767px) {
+        text-align: center;
+    }
 }
 
 .services .circle-gradient {

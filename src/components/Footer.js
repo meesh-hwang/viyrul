@@ -1,8 +1,5 @@
 import logo from '../assets/img/logo.png';
-import mail from '../assets/img/icons/mail.png';
-import instagram from '../assets/img/icons/instagram.png';
 import { Outlet, Link } from "react-router-dom";
-import phone from '../assets/img/icons/phone.png';
 
 const Footer = () => {
 

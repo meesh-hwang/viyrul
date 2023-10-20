@@ -5,11 +5,11 @@ import About from '../components/About';
 
 const Home = () => {
     return(
-        <>
+        <div>
             <Hero />
             <Services />
             <About />
-        </>
+        </div >
     );
 }
 
