@@ -1,9 +1,10 @@
-import React, { useLayoutEffect, useRef } from 'react';
+import React, { useLayoutEffect, useRef, useState } from 'react';
 import { gsap } from 'gsap';
-import { CustomEase, Draggable } from 'gsap/all';
+import { Draggable } from 'gsap/all';
 import flexible from '../assets/img/icons/flexible.png';
 import { useMediaQuery } from 'react-responsive';
 import '../styles/servicesSlider.css';
+
 
 const cards = [
   {
@@ -57,39 +58,55 @@ const ServicesSlider = () => {
   // Refs
   const wrapperRef = useRef();
   const dragElRef = useRef();
+  const cardRefs = useRef([]);
   const animationTimeline = useRef();
+
   // State
   const isMobile = useMediaQuery({ maxWidth: 768 });
 
-  const div = document.createElement("div");
-
+  // Style cards that are facing backward
+  const updateCardClasses = () => {
+    document.querySelectorAll('.process-card').forEach((element, index) => {
+      const computedStyle = window.getComputedStyle(element);
+      const transformValue = computedStyle.transform || computedStyle.webkitTransform;
+      const matrixValues = transformValue.match(/matrix3d\(([^)]+)\)/);
+      if (matrixValues) {
+        // The matrix3d values are in a comma-separated string, so split it
+        const rotateYValue = parseFloat(matrixValues[1].split(', ')[3]);
+        
+        if (rotateYValue < 70 || rotateYValue > 260) {
+        element.classList.add('back');
+        } else {
+          element.classList.remove('back');
+        }
+      }
+    });
+  };
+  
   // Effect for initializing GSAP and Draggable
   useLayoutEffect(() => {
     gsap.registerPlugin(Draggable);
 
     // Set initial values
-    let dragAmount = isMobile ? -1500 : -3000;
-    let cardGap = Math.min(window.innerWidth / 1.8, isMobile ? 400 : 520);
+    let dragAmount = isMobile ? -3000 : -1500;
+    let cardGap = Math.min(window.innerWidth / 1.8, isMobile ? 600 : 520);
     let startProgress;
-    let spin;
     let progressLimit = gsap.utils.wrap(0, 1);
-    const processCards = gsap.utils.toArray(".process-card")
 
     // Function to handle resizing and initialize Draggable
     const onResize = () => {
-      
-
       animationTimeline.current = gsap.fromTo(
-        ".process-card",
+        cardRefs.current,
         {
-          rotationY: (i) => (i * 360) / processCards.length,
+          rotationY: (i) => (i * 360) / cards.length,
         },
-        { 
+        {
           rotationY: '+=360',
           transformOrigin: `50% 50% ${-cardGap}em`,
-          duration: 50,
+          duration: 60,
           ease: 'none',
           repeat: -1,
+          onUpdate: updateCardClasses,
         }
       );
 
@@ -100,7 +117,7 @@ const ServicesSlider = () => {
         lockAxis: true,
         onPress() {
           startProgress = animationTimeline.current.progress();
-        animationTimeline.current.pause();
+          animationTimeline.current.pause();
         },
         onDrag() {
           let currentProgress = startProgress + (this.startX - this.x) / dragAmount;
@@ -111,7 +128,6 @@ const ServicesSlider = () => {
         },
       });
     };
-
     // Initial call to onResize
     onResize();
 
@@ -127,14 +143,18 @@ const ServicesSlider = () => {
       window.removeEventListener('resize', handleResize);
       animationTimeline.current.kill();
     };
-  }, [isMobile, div]);
+  }, [isMobile]);
 
   return (
     <div className="slider-container">
-      <div ref={dragElRef} ></div>
+      <div ref={dragElRef}></div>
       <div ref={wrapperRef} className="stage services-slider">
         {cards.map((card, index) => (
-          <div key={index} className="process-card">
+          <div
+            key={index}
+            ref={(element) => (cardRefs.current[index] = element)}
+            className="process-card back"
+          >
             <img src={card.img} alt={card.name} />
             <h4>{card.name}</h4>
             {card.desc}

@@ -9,7 +9,7 @@ const Services = () => {
     return isMobile ? children : null
   }
   const Default = ({ children }) => {
-    const isDefault = useMediaQuery({ maxWidth: 767 })
+    const isDefault = useMediaQuery({ minWidth: 767 })
     return isDefault ? children : null
   }
 

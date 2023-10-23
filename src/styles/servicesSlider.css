@@ -1,18 +1,20 @@
   .slider-container {
     height: 26em;
+    margin-top: 2em;
     display: flex;
     justify-content: center;
   }
   
   .stage {
     width: 100vw;
-    height: 20em;
+    height: 34em;
     color: #ddd;
     cursor:pointer;
     top: 50%;
     transform-style: preserve-3d;
     perspective: 1200px;
     z-index: 1;
+    justify-self: center;
     .process-card {
       position: absolute;
       display: flex;
@@ -26,7 +28,18 @@
       border-radius: 30px;
       overflow:hidden;
       left: 50%;
-      transform: translate3d(-50%, 0, 0);
+    perspective: 1000px;
+    }
+    .back.process-card::after {
+      background-color: black;
+      content: '';
+      right: 0px;
+      bottom: 0px;
+      position: absolute;
+      top: 0px;
+      left: 0px;
+      -webkit-transform: rotateY( 180deg );
+      -webkit-transform-style: preserve-3d;
     }
     
       .process-card > img {

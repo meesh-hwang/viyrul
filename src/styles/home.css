@@ -62,9 +62,9 @@ img.globe {
 .phones {
     width: auto;
     height: auto;
-    max-width: 12.428em;
-    min-height: 21.9em;
-    max-height: 21.9em;
+    max-width: 13em;
+    min-height: 23em;
+    max-height: 23em;
     object-fit: cover;
     object-position: 0 50%;
 }
