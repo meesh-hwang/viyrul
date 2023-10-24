@@ -1,4 +1,4 @@
-import React, { useLayoutEffect, useRef, useState } from 'react';
+import React, { useLayoutEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { Draggable } from 'gsap/all';
 import flexible from '../assets/img/icons/flexible.png';
@@ -64,24 +64,24 @@ const ServicesSlider = () => {
   // State
   const isMobile = useMediaQuery({ maxWidth: 768 });
 
-  // Style cards that are facing backward
-  const updateCardClasses = () => {
-    document.querySelectorAll('.process-card').forEach((element, index) => {
-      const computedStyle = window.getComputedStyle(element);
-      const transformValue = computedStyle.transform || computedStyle.webkitTransform;
-      const matrixValues = transformValue.match(/matrix3d\(([^)]+)\)/);
-      if (matrixValues) {
-        // The matrix3d values are in a comma-separated string, so split it
-        const rotateYValue = parseFloat(matrixValues[1].split(', ')[3]);
+  // // Style cards that are facing backward
+  // const updateCardClasses = () => {
+  //   document.querySelectorAll('.process-card').forEach((element, index) => {
+  //     const computedStyle = window.getComputedStyle(element);
+  //     const transformValue = computedStyle.transform || computedStyle.webkitTransform;
+  //     const matrixValues = transformValue.match(/matrix3d\(([^)]+)\)/);
+  //     if (matrixValues) {
+  //       // The matrix3d values are in a comma-separated string, so split it
+  //       const rotateYValue = parseFloat(matrixValues[1].split(', ')[3]);
         
-        if (rotateYValue < 70 || rotateYValue > 260) {
-        element.classList.add('back');
-        } else {
-          element.classList.remove('back');
-        }
-      }
-    });
-  };
+  //       if (rotateYValue < 70 || rotateYValue > 260) {
+  //       element.classList.add('back');
+  //       } else {
+  //         element.classList.remove('back');
+  //       }
+  //     }
+  //   });
+  // };
   
   // Effect for initializing GSAP and Draggable
   useLayoutEffect(() => {
@@ -106,7 +106,7 @@ const ServicesSlider = () => {
           duration: 60,
           ease: 'none',
           repeat: -1,
-          onUpdate: updateCardClasses,
+          // onUpdate: updateCardClasses,
         }
       );
 

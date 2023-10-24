@@ -6,7 +6,6 @@
   }
   
   .stage {
-    width: 100vw;
     height: 34em;
     color: #ddd;
     cursor:pointer;
@@ -14,7 +13,8 @@
     transform-style: preserve-3d;
     perspective: 1200px;
     z-index: 1;
-    justify-self: center;
+    display: flex;
+    justify-content: center;
     margin: auto;
     .process-card {
       position: absolute;
@@ -28,8 +28,7 @@
       box-shadow: 2px 4px 32px #5d26f65b;
       border-radius: 30px;
       overflow:hidden;
-      left: 16.2em;
-    perspective: 1000px;
+    perspective: 1200px;
     }
     /* .back.process-card::after {
       background-color: black;
