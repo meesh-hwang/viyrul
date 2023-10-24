@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/viyrul/static/css/main.93ccadc6.css",
+    "main.css": "/viyrul/static/css/main.c8c143f9.css",
     "main.js": "/viyrul/static/js/main.92f6fdf2.js",
     "static/js/787.677bcf55.chunk.js": "/viyrul/static/js/787.677bcf55.chunk.js",
     "static/media/phones.png": "/viyrul/static/media/phones.dcfc2818ac5f8602edbd.png",
@@ -17,12 +17,12 @@
     "static/media/Poppins-Thin.woff2": "/viyrul/static/media/Poppins-Thin.67189c02884e1aa3655b.woff2",
     "static/media/Karla-VariableFont_wght.woff2": "/viyrul/static/media/Karla-VariableFont_wght.a2b242980c58301f75ab.woff2",
     "index.html": "/viyrul/index.html",
-    "main.93ccadc6.css.map": "/viyrul/static/css/main.93ccadc6.css.map",
+    "main.c8c143f9.css.map": "/viyrul/static/css/main.c8c143f9.css.map",
     "main.92f6fdf2.js.map": "/viyrul/static/js/main.92f6fdf2.js.map",
     "787.677bcf55.chunk.js.map": "/viyrul/static/js/787.677bcf55.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.93ccadc6.css",
+    "static/css/main.c8c143f9.css",
     "static/js/main.92f6fdf2.js"
   ]
 }
