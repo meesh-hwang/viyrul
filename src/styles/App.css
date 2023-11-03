@@ -31,6 +31,8 @@ white: #ffffff;
 
 html {
   background: var(--secondary);
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 
 
@@ -51,7 +53,7 @@ a {
 }
 
 p {
-  color: var(--darkText);
+  color: var(--light);
 }
 
 .flex {
@@ -102,18 +104,25 @@ p {
 
 .App {
   background: var(--secondary);
-  color: var(--light);
+  color: var(--secondary);
   position: absolute;
   width: 100vw;
   z-index: -1;
   font-family: 'Poppins', sans-serif;
 }
 
+h2, h3, h4 {
+  color: var(--light);
+}
+
 .contactCTA {
+  margin-top: -10%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  transition: ease;
+  opacity: 0;
 }
 
 .contactCTA h3 {
@@ -122,22 +131,31 @@ p {
   font-weight: 900;
 }
 
-.app-container:nth-child(1){
-  visibility: hidden;
-}
-
 .app-container > * {
   visibility: visible;
 }
 
 /* HEADER */
 
-header.header {
+.header {
   justify-content: space-between;
   align-items: center;
   display: flex;
-  margin-top: -0.5em;
-  padding: 0em 2em 0em 2em;
+  top: 0;
+  max-width: 100vw;
+  margin-top: -2.5em;
+  position:sticky;
+  padding: 1em 2em 0em 2em;
+  transition-property: all; 
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 500ms;
+  z-index: 2;
+  background-color: #0e0e0e8e;
+}
+
+.header.hide {
+  transform: translate(0, -5em);
+
 }
 
 .logo {
@@ -150,6 +168,9 @@ ul.menu {
   list-style-type: none;
   justify-content: space-between;
   gap: 2.4em;
+  & li {
+    display: flex;
+  }
 }
 .menu li a {
   color: var(--lighter);
@@ -217,10 +238,20 @@ ul.menu {
   color: var(--light);
 }
 
+
+
+.services h2 {
+  margin-top: 3em;
+  font-size: 1.28em;
+  font-weight: 900;
+}
+
+
 /*PAGES*/
 
 h1.pg-title  {
   width: fit-content;
+  margin: auto;
   color: var(--primary);
   font-weight: 400;
   font-size: 0.68em;
@@ -239,4 +270,154 @@ h1.pg-title  {
   @media (max-width: 400px) {
     color: red;
   }
+}
+
+/* HOVER ANIMATION */
+
+
+/* HOVER ANIMATION */
+
+.card {
+  transition: all 0.6s ease-out;
+  transform: rotateX(0deg) rotateY(0deg);
+  box-shadow: 3px 2px 20px #0000008e;
+  perspective: 1000px;
+  transform-style: preserve-3d;
+}
+
+.card-wrapper {
+  transition: all 0.6s ease-out;
+  perspective: 1000px;
+
+}
+
+.card-wrapper:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+}
+
+.t_over {
+  width: 33.333%;
+  height: 33.333%;
+  position: absolute;
+  z-index: 1;
+}
+
+.t_over:nth-child(1) {
+  left: 0;
+  top: 0;
+}
+
+.t_over:nth-child(2) {
+  left: 33.333%;
+  top: 0;
+}
+
+.t_over:nth-child(3) {
+  left: 66.666%;
+  top: 0;
+}
+
+.t_over:nth-child(4) {
+  left: 0;
+  top: 33.333%;
+}
+
+.t_over:nth-child(5) {
+  left: 33.333%;
+  top: 33.333%;
+}
+
+.t_over:nth-child(6) {
+  left: 66.666%;
+  top: 33.333%;
+}
+
+.t_over:nth-child(7) {
+  left: 0;
+  top: 66.666%;
+}
+
+.t_over:nth-child(8) {
+  left: 33.333%;
+  top: 66.666%;
+}
+
+.t_over:nth-child(9) {
+  left: 66.666%;
+  top: 66.666%;
+}
+
+.t_over:nth-child(1):hover~.card {
+  box-shadow: 3px 10px 20px #5d26f696;
+  transform: rotateX(-20deg) rotateY(20deg);
+}
+
+.t_over:nth-child(2):hover~.card {
+  box-shadow: 3px 10px 20px #5d26f6cc;
+  transform: rotateX(-20deg) rotateY(0deg)
+}
+
+.t_over:nth-child(3):hover~.card {
+  box-shadow: 3px 2px 20px #5d26f6cc;
+  transform: rotateX(-20deg) rotateY(-20deg)
+}
+
+.t_over:nth-child(4):hover~.card {
+  box-shadow: 3px 10px 20px #5d26f6cc;
+  transform: rotateX(0deg) rotateY(20deg)
+}
+
+.t_over:nth-child(5):hover~.card {
+  box-shadow: 3px 10px 20px #5d26f691;
+  transform: rotateX(0deg) rotateY(0deg)
+}
+
+.t_over:nth-child(6):hover~.card {
+  box-shadow: 3px 10px 20px #5d26f686;
+  transform: rotateX(0deg) rotateY(-20deg)
+}
+
+.t_over:nth-child(7):hover~.card {
+  box-shadow: 0px -10px 20px #5d26f66e;
+  transform: rotateX(20deg) rotateY(20deg);
+}
+
+.t_over:nth-child(8):hover~.card {
+  box-shadow: 3px -10px 20px #5d26f66e;
+  transform: rotateX(20deg) rotateY(0deg)
+}
+
+.t_over:nth-child(9):hover~.card {
+  box-shadow: 3px -10px 20px #5d26f657;
+  transform: rotateX(20deg) rotateY(-20deg)
+}
+
+/*PULSING CIRCLE*/
+
+
+ .circle {
+  background: radial-gradient(circle, rgba(93, 38, 246, 0.274) 0%, rgba(93, 38, 246, 0) 100%);
+  height: 20vmax;
+width: 20vmax;
+border-radius: 100%;
+  box-shadow: 2px 4px 2px 16px #5d26f609;
+  position: relative;
+}
+
+.circle-ring {
+  position: absolute;
+  background: radial-gradient(circle, rgba(93, 38, 246, 0.274) 0%, rgba(93, 38, 246, 0.11) 100%);
+
+  height: 100%;
+  width: 100%;
+  box-shadow: 2px 4px 2px 16px #5d26f609;
+  border-radius: 100%;
+}
+
+.circle-pulse {
+  position: absolute;
+  display: flex;
+  margin: auto;
+  z-index: -1;
 }

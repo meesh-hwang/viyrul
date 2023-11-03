@@ -88,7 +88,7 @@ const ServicesSlider = () => {
     gsap.registerPlugin(Draggable);
 
     // Set initial values
-    let dragAmount = isMobile ? -3000 : -1500;
+    let dragAmount = isMobile ? 3000 : 1500;
     let cardGap = Math.min(window.innerWidth / 1.8, isMobile ? 600 : 520);
     let startProgress;
     let progressLimit = gsap.utils.wrap(0, 1);
@@ -101,7 +101,7 @@ const ServicesSlider = () => {
           rotationY: (i) => (i * 360) / cards.length,
         },
         {
-          rotationY: '+=360',
+          rotationY: '-=360',
           transformOrigin: `50% 50% ${-cardGap}em`,
           duration: 60,
           ease: 'none',

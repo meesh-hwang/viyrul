@@ -1,4 +1,9 @@
-import clock from '../assets/img/icons/clock.png'
+import seo from '../assets/img/icons/seo.png'
+import ecommerce from '../assets/img/icons/ecommerce.png'
+import marketing from '../assets/img/icons/marketing.png'
+import uiux from '../assets/img/icons/uiux.png'
+import smm from '../assets/img/icons/smm.png'
+import webdev from '../assets/img/icons/webdev.png'
 import { useState } from 'react';
 import { useMediaQuery } from 'react-responsive';
 
@@ -15,37 +20,37 @@ const ServicesCards = () => {
         {
             id: 1,
             name: <h4>UI and UX<br />Design</h4>,
-            img: clock,
+            img: uiux,
             desc: "Our development process focuses on creating intuitive navigation, fast load times, and engaging interactions to keep visitors on your site."
         },
         {
             id: 2,
             name: <h4>Web<br />Development</h4>,
-            img: clock,
+            img: webdev,
             desc: "We stay at the forefront of web development technologies, ensuring that your website or application is built using the latest tools and platforms."
         },
         {
             id: 3,
             name: <h4>Digital<br />Marketing</h4>,
-            img: clock,
+            img: marketing,
             desc: "From SEO and content marketing to pay-per-click advertising, we'll drive qualified traffic to your website and enhance your brand's online reach."
         },
         {
             id: 4,
             name: <h4>Social Media<br />Management</h4>,
-            img: clock,
+            img: smm,
             desc: "Our social media management services will help you create and maintain a dynamic social presence, build brand loyalty, and increase conversions."
         },
         {
             id: 5,
             name: <h4>Search Engine<br />Optimization</h4>,
-            img: clock,
+            img: seo,
             desc: "We implement on-page and technical SEO best practices to help your site rank well on search engines, driving more organic traffic to your business."
         },
         {
             id: 6,
             name: <h4>E-commerce<br />Solutions</h4>,
-            img: clock,
+            img: ecommerce,
             desc: "We have extensive experience in e-commerce development. From payment gateways to inventory management, we've got you covered."
         }
     ];

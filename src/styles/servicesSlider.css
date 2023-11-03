@@ -1,12 +1,12 @@
   .slider-container {
     height: 26em;
-    margin-top: 2em;
+    margin-top: 2.6em;
     display: flex;
     justify-content: center;
   }
   
   .stage {
-    height: 34em;
+    height: 32em;
     color: #ddd;
     cursor:pointer;
     top: 50%;

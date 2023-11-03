@@ -2,6 +2,7 @@ import Phone from './Phone';
 import { Outlet, Link } from "react-router-dom";
 import arrow from '../assets/img/arrow.png';
 import { useMediaQuery } from 'react-responsive'
+import PulsingCircle from './PulsingCircle';
 const Services = () => {
 
   const Mobile = ({ children }) => {
@@ -17,7 +18,7 @@ const Services = () => {
     <div className='services'>
       <Mobile>
         <div className='services-container mobile'>
-          <div className='circle-gradient'></div>
+
           <Phone />
           <div className='services-text'>
             <p>We offer aaaa<br/> services to help<br/> you bring your<br/> business <span className='emph'> online</span></p>
@@ -31,7 +32,7 @@ const Services = () => {
       </Mobile>
       <Default>
         <div className='services-container'>
-          <div className='circle-gradient'></div>
+          <PulsingCircle />
           <Phone />
           <div className='services-text'>
             <p>We offer quality<br/> services to help<br/> you bring your<br/> business <span className='emph'> online</span></p>

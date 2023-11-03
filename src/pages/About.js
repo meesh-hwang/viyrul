@@ -1,35 +1,181 @@
 import '../styles/about.css'
 import ContactCTA from "../components/ContactCTA"
 import alan from '../assets/img/alan.png'
+import { useMediaQuery } from 'react-responsive'
+import { useState, useLayoutEffect } from 'react'
+import gsap from 'gsap'
+import { ScrollTrigger } from 'gsap/all'
+import PulsingCircle from '../components/PulsingCircle'
+
+const team = [
+    {
+        id: 1,
+        name: "Alan Hua",
+        position: "Founder & CEO",
+        img: alan,
+        desc: "Having dedicated more than five years to the e-commerce and customer support sectors, Alan possesses a profound understanding of how to craft a highly influential online presence that not only benefits your business but also paves the way for efficient growth and exceptional excellence."
+    },
+    {
+        id: 2,
+        name: "Meesh Hwang",
+        img: alan,
+        position: "Chief Web Officer (CWO)",
+        desc: "Meesh's combination of a solid foundation in web development, coupled with her ongoing skill diversification, positions her as one of our most proficient team members for engaging closely with clients in achieving the results they aspire to attain at Viyrul."
+    },
+]
 
 const About = () => {
-    return(
-        <div className="pg-container about">
-            <h1 className="pg-title">About Us</h1>
-            <div className='circle-gradient'></div>     
-            <div className="about-blurb">
-                <p>At <span className="emph">Viyrul</span>, we are passionate about<br /> turning your web dreams into reality.<br /> Our services are designed to help your<br />business thrive in the digital age.</p>
-            </div>
-            <div className='team'>
-                <h3>Meet the <span className='emph'>team</span></h3>
-                <div className='member'>
-                    <div className='img'>
-                        <img src={alan} alt='Alan headshot' />
-                        <h4>Alan Hua</h4>
-                        <h5>Founder & CEO</h5>
-                    </div>
-                    <p>Having dedicated more than five years to the e-commerce and customer support sectors, Alan possesses a profound understanding of how to craft a highly influential online presence that not only benefits your business but also paves the way for efficient growth and exceptional excellence.</p>
+
+    const [teamTxt, setTeamTxt] = useState(null);
+
+
+    const clickHandler = (id) => {
+        setTeamTxt((prev) => {
+            return prev === id ? null : id;
+        });
+    };
+
+    const isMobile = useMediaQuery({
+        query: '(max-width: 767px)'
+    })
+
+    const renderedItems = [];
+
+    for (let i = 0; i < team.length; i++) {
+        const member = team[i];
+        renderedItems.push(
+            <div key={`member-${i}`} className={isMobile ? "member-card mobile" : "member-card"}>
+                <div className='card-wrapper' onClick={() => clickHandler(member.id)}>
+                    <span className="t_over"></span>
+                    <span className="t_over"></span>
+                    <span className="t_over"></span>
+                    <span className="t_over"></span>
+                    <span className="t_over"></span>
+                    <span className="t_over"></span>
+                    <span className="t_over"></span>
+                    <span className="t_over"></span>
+                    <span className="t_over"></span>
+                    {teamTxt === member.id ? (
+                        <div className='card'>
+                            <p>{member.desc}</p>
+                        </div>
+                    ) : (
+                        <div className='card'>
+                            <img src={member.img} alt='Alan headshot' />
+                            <h4>{member.name}</h4>
+                            <h5>{member.position}</h5>
+                        </div>
+
+                    )}
                 </div>
-                <div className='member'>
-                    <div className='img'>
-                        <img src={alan} alt='Alan headshot' />
-                        <h4>Meesh Hwang</h4>
-                        <h5>Chief Web Officer (CWO)</h5>
-                    </div>
-                    <p>Meesh's combination of a solid foundation in web development, coupled with her ongoing skill diversification, positions her as one of our most proficient team members for engaging closely with clients in achieving the results they aspire to attain at Viyrul.</p>
-                </div>
             </div>
-            <ContactCTA />
+        );
+    }
+
+
+
+    useLayoutEffect(() => {
+        gsap.registerPlugin(ScrollTrigger);
+        let ctx = gsap.context(() => {
+
+            let welcome = document.querySelector(".about-hero h2");
+
+            gsap.to(welcome, {
+                ease: "linear",
+                xPercent: -100,
+                scrollTrigger: {
+                    trigger: ".about-hero",
+                    toggleActions: "play complete reverse reset",
+                    start: "20",
+                    scrub: 1,
+                }
+            });
+
+            gsap.to(".about-intro", {
+                opacity: 1,
+                yPercent: -250,
+                duration: 1,
+                ease: 'ease',
+                scale: 1.8,
+                scrollTrigger: {
+                    trigger: ".about-hero",
+                    start: 'center',
+                    toggleActions: "play complete restart",
+                    scrub: 1
+                },
+            });
+
+              gsap.to(".about-blurb", {
+                duration: 3,
+                scale: 2,
+                opacity: 1,
+                yPercent: -200,
+                ease: 'ease',
+                scrollTrigger: {
+                    toggleActions: "play complete restart",
+                    trigger: ".about-intro ",
+                    start: "top 50%",
+                    end: 'bottom bottom',
+                    scrub: 1
+                },
+            });
+
+            gsap.to(".team", {
+                ease: 'ease',
+                duration: 5,
+                scale: 1,
+                opacity: 1,
+                yPercent: -200,
+                scrollTrigger: {
+                    toggleActions: "play complete restart",
+                    trigger: ".about-blurb",
+                    start: "top 80%",
+                    end: 'bottom 80%',
+                    scrub: 1
+                },
+            });
+
+            gsap.to(".contactCTA", {
+                ease: 'ease',
+                duration: 2,
+                opacity: 1,
+                yPercent: -200,
+                scrollTrigger: {
+                    trigger: ".about-blurb",
+                    toggleActions: "play complete restart",
+                    start: "bottom top", 
+                    end: 'bottom 90%',
+                    scrub: 1
+                },
+            });
+        });
+        return () => ctx.revert();
+    }, [])
+
+    return (
+        <div className="about">
+            
+                <div className='about-hero panel'>
+                    <PulsingCircle />
+                    <div className='section inner'>
+                        <h2>Welcome to <span className='emph'>Viyrul</span></h2>
+                    </div>
+                </div>
+                <div className='about-intro panel'>
+                    <div className='section'>
+                        <p>With a shared vision and a deep-seated passion for social media management, digital marketing, and web development, we embarked on a journey fueled by innovation. Recognizing the need for businesses to thrive in the digital age, we set out to provide extraordinary solutions that empower our clients.</p>                </div>
+                </div>
+                <div className="about-blurb panel">
+                    <div className='section'>
+                        <p>At <span className="emph">Viyrul</span>, we are passionate about turning your web dreams into reality. Our services are designed to help your business thrive in the digital age.</p>                </div>
+                </div>
+                <div className='team panel'>
+                    <h2>Meet the <span className='emph'>team</span></h2>
+                    <div className='members'>
+                        {renderedItems}
+                    </div>
+                </div>
+                    <ContactCTA />
         </div>
     )
 }

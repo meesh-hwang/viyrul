@@ -1,47 +1,102 @@
-.about-blurb {
-    margin-bottom: 3em;
-    margin-top: 3em;
+
+
+.about-hero {  
+    display: flex;
+    justify-content: center;
+    height: 80vh;
+    padding-top: 1em;
+    & .section {
+        height: 100%;
+        width: 100%;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        & h2 {
+            font-size: 7.2em;
+            text-align: end;
+            min-width: 10em;
+            }
+    }
 }
 
-.about-blurb h2 {
-    color: var(--light);
-    font-weight: 900;
-    font-size: 1.3em;
-}
-
-.about-blurb p {
-    color: var(--light);
-    font-weight: 700;
-    line-height: 1.8;
-    font-size: 0.88em;
+.about-intro {
     text-align: center;
+    
+    margin-top: 50%;
+    opacity: 0;
+    transition: ease;
+    & p{
+        color: var(--light);
+        width: 27em;
+        font-size: 0.6em;
+    line-height: 2.2em;
+    font-weight: 600;
+    }
+}
+
+.about-blurb {
+    opacity: 0;
+    transition: ease;
+    margin: 7em 0em 3em 0em;
+    & p{
+    color: var(--light);
+    padding: 0 30em 2em 30em;
+    font-weight: 900;
+    line-height: 1.8;
+    font-size: 0.6em;
+    text-align: center;
+    }
 }
 
 .about h3{
     font-size: 1.2em;
     font-weight: 900;
 }
+.panel{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: ease;
+}
+
 
 .team {
     display: flex;
     flex-direction: column;
+    margin-top: 65%;
     gap: 2.4em;
-    align-items: center;
-    margin-bottom: 3em;
+    justify-content: center;
+    align-items: center;    
+    transition: ease;
+    opacity: 0;
+    transform: scale(0.5);
 }
 
-.member {
+.contactCTA {
+        margin-top: -35%;
+    margin-bottom: -10em;
+}
+
+.members {
     display: flex;
+    gap: 1.6em;
+}
+
+.about .card {
+    display: flex;
+    flex-direction: column;
+    height: 14em;
+    width: 13em;
+    gap: 0.34em;
     align-items: center;
     justify-content: center;
-    gap: 2.6em;
-    padding: 3em 3.6em;
     background-color: var(--black);
     box-shadow: 2px 2px 30px #5d26f62c;
     border-radius: 20px;
+    padding: 0 2em;
 }
 
-.member p {
+.card p {
     font-size: 0.54em;
     line-height: 1.8;
     color: #ffffffce;
@@ -50,36 +105,39 @@
     width: 25em;
 }
 
-.member .img {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+
+.about .card img {
+    width: 8em;
+    object-fit: contain;
 }
 
-.member img {
-    width: 6em;
-}
-
-.member h4 {
+.card h4 {
     line-height: 0;
     margin-block-end: 0;
-    font-size: 0.62em;
+    font-size: 0.78em;
+    font-weight: 400;
 }
 
-.member h5 {
+.card h5 {
     line-height: 0;
     font-size: 0.56em;
-    font-weight: 300;
+    font-weight: 400;
     color: var(--primary);
 }
 
-.about .circle-gradient {
-    padding-top: 10px;
-    margin-top: -3em;
-    right: 0%;
-    z-index: -1;
-    background: radial-gradient(12% 30% at 60% 45%, rgba(93, 38, 246, 0.219) 0%, rgba(92, 38, 246, 0) 100%);
-    position: absolute;
-    width: 68em;
-    height: 25em;
+.about .circle {
+  left: 50%;
+
+  &
+  
+  .circle-pulse {
+    right: 50%;
+  }
+
 }
+  .about {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    
+  }
