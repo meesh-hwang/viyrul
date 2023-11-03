@@ -1,11 +1,10 @@
 {
   "files": {
-    "main.css": "/viyrul/static/css/main.68f8f929.css",
-    "main.js": "/viyrul/static/js/main.831412af.js",
+    "main.css": "/viyrul/static/css/main.cfa772c3.css",
+    "main.js": "/viyrul/static/js/main.cf57368b.js",
     "static/js/787.677bcf55.chunk.js": "/viyrul/static/js/787.677bcf55.chunk.js",
     "static/media/phones.png": "/viyrul/static/media/phones.dcfc2818ac5f8602edbd.png",
     "static/media/alan.png": "/viyrul/static/media/alan.e1941d2b76025c2d5b66.png",
-    "static/media/globe.png": "/viyrul/static/media/globe.5db6928a483228a6e340.png",
     "static/media/Poppins-Regular.woff2": "/viyrul/static/media/Poppins-Regular.408e3747283ff9538aca.woff2",
     "static/media/Poppins-SemiBold.woff2": "/viyrul/static/media/Poppins-SemiBold.52dd35dd25ef4bfb1ae0.woff2",
     "static/media/Poppins-Light.woff2": "/viyrul/static/media/Poppins-Light.58622449c0f73969f012.woff2",
@@ -17,12 +16,12 @@
     "static/media/Poppins-Thin.woff2": "/viyrul/static/media/Poppins-Thin.67189c02884e1aa3655b.woff2",
     "static/media/Karla-VariableFont_wght.woff2": "/viyrul/static/media/Karla-VariableFont_wght.a2b242980c58301f75ab.woff2",
     "index.html": "/viyrul/index.html",
-    "main.68f8f929.css.map": "/viyrul/static/css/main.68f8f929.css.map",
-    "main.831412af.js.map": "/viyrul/static/js/main.831412af.js.map",
+    "main.cfa772c3.css.map": "/viyrul/static/css/main.cfa772c3.css.map",
+    "main.cf57368b.js.map": "/viyrul/static/js/main.cf57368b.js.map",
     "787.677bcf55.chunk.js.map": "/viyrul/static/js/787.677bcf55.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.68f8f929.css",
-    "static/js/main.831412af.js"
+    "static/css/main.cfa772c3.css",
+    "static/js/main.cf57368b.js"
   ]
 }
