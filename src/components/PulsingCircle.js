@@ -1,9 +1,9 @@
 import gsap from "gsap";
-import { useEffect } from "react";
+import { useLayoutEffect } from "react";
 
 const PulsingCircle = () => {
 
-    useEffect(() => {
+    useLayoutEffect(() => {
         let ctx = gsap.context(() => {
             gsap.to(".circle-ring", {
                 scale: 2.6,

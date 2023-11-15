@@ -1,203 +1,145 @@
-.pg-container.services {
-    align-items: center;
-}
+/*DESKTOP*/
 
+.services-pg.tablet {
+    & .services-slider-section {
+        margin-top: 100%;
+    }
 
-.services-section-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    opacity: 0;
-    transform: scale(0.6);
-}
+    & .services-section-container {
+        transform: scale(0.3);
+    }
 
-.services-blurb {
-    margin-top: 20%;
-}
+    & .card-wrapper {
+        
+        & img {
+            height: 3.2em;
+        }
 
-.services-slider-section {
-    margin-top: 50%;
-    opacity: 0;
-}
-
-.services h1 {
-    align-self: flex-start;
-}
-
-.services-blurb h3{
-    text-align: center;
-    line-height: 1.1;
-    margin-top: 2em;
-    margin-bottom: 3em;
-}
-
-.service-cards {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.8em;
-}
-
-.row {
-    display: flex;
-    flex-direction: column;
-    align-self: center;
-}
-
-.service-cards div {
-    display: flex;
-    gap: 0.8em;
-}
-
-    .services .card img {
-        height: 3.6em;
+        & .card {
+            width: 7em;
+            height: 5em;            
+            padding: 1.8em 1.2em;
+            margin-bottom: 1em;
+            
+            & h4 {
+                font-size: 0.7em;
+                text-align: center;
+                line-height: 1.2;
+                margin-block-end: 0;
+                margin-block-start: 1em;
+                font-weight: 400;
+                color: var(--primary);
+            }
+            & p {
+                font-size: 0.54em;
+                line-height: 1.6;    
+                color: var(--light);
+                width: 14em;
+                text-align: center;
+                margin-block-start: 0;
+                margin-block-end: 0;
+            }
+        }
     }
     
-    .services .card h4 {
-        font-size: 0.7em;
-        text-align: center;
-        line-height: 1.2;
-        margin-block-end: 0;
-        margin-block-start: 1em;
-        font-weight: 400;
-        color: var(--primary);
+}
+
+/*DESKTOP*/
+
+.services-pg{
+    align-items: center;
+    
+    & .circle-pulse {
+        right: 50%;
+        top: 5%;  
+
+        & .circle {
+            height: 10vmax;
+            width: 10vmax;
+        }
+    }
+    & .services-section-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        opacity: 0;
+        transform: scale(0.6);
     }
     
-    .services .circle-pulse {
-        right: 52%;
+    & .services-blurb {
+        margin-top: 30%;
+        & h3{
+            text-align: center;
+            line-height: 1.1;
+            margin-top: 2em;
+            margin-bottom: 3em;
+        }
+    }
+
+    & .contactCTA {
+        margin-top: 0;
+    }
     
-}
+    & .services-slider-section {
+        transform: scale(0.3);
+        opacity: 0;
+    }
 
-.services .card {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background-color: var(--black);
-    width: 8em;
-    height: 5em;
-    border-radius: 30px;
-    gap: 0;
-    padding: 1.8em 1.2em;
-    opacity: 0;
-}
+    & h1 {
+        align-self: flex-start;
+    }
 
-.card p {
-    font-size: 0.54em;
-    line-height: 1.6;    
-    color: var(--light);
-    text-align: center;
-    margin-block-start: 0;
-    margin-block-end: 0;
-}
+    & .service-cards {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.8em;
+    }
 
-/* HOVER ANIMATION */
+    & .row {
+        display: flex;
+        flex-direction: column;
+        align-self: center;
+    }
 
-.card-wrapper {
-    transition: all 0.6s ease-out;
-    perspective: 1000px;
+    & .card-wrapper {
+        display: flex;
+        gap: 0.8em;
+        transition: all 0.6s ease-out;
+        perspective: 1000px;
+        & :hover {
+            cursor: pointer;
+            transform: scale(1.1);
+        }
+        & img {
+            height: 3.6em;
+        }
 
-}
-
-.card-wrapper:hover {
-    cursor: pointer;
-    transform: scale(1.1);
-}
-
-.t_over {
-    width: 33.333%;
-    height: 33.333%;
-    position: absolute;
-    z-index: 1;
-}
-
-.t_over:nth-child(1) {
-    left: 0;
-    top: 0;
-}
-
-.t_over:nth-child(2) {
-    left: 33.333%;
-    top: 0;
-}
-
-.t_over:nth-child(3) {
-    left: 66.666%;
-    top: 0;
-}
-
-.t_over:nth-child(4) {
-    left: 0;
-    top: 33.333%;
-}
-
-.t_over:nth-child(5) {
-    left: 33.333%;
-    top: 33.333%;
-}
-
-.t_over:nth-child(6) {
-    left: 66.666%;
-    top: 33.333%;
-}
-
-.t_over:nth-child(7) {
-    left: 0;
-    top: 66.666%;
-}
-
-.t_over:nth-child(8) {
-    left: 33.333%;
-    top: 66.666%;
-}
-
-.t_over:nth-child(9) {
-    left: 66.666%;
-    top: 66.666%;
-}
-
-.t_over:nth-child(1):hover~.card {
-    box-shadow: 3px 10px 20px #5d26f696;
-    transform: rotateX(-20deg) rotateY(20deg);
-}
-
-.t_over:nth-child(2):hover~.card {
-    box-shadow: 3px 10px 20px #5d26f6cc;
-    transform: rotateX(-20deg) rotateY(0deg)
-}
-
-.t_over:nth-child(3):hover~.card {
-    box-shadow: 3px 2px 20px #5d26f6cc;
-    transform: rotateX(-20deg) rotateY(-20deg)
-}
-
-.t_over:nth-child(4):hover~.card {
-    box-shadow: 3px 10px 20px #5d26f6cc;
-    transform: rotateX(0deg) rotateY(20deg)
-}
-
-.t_over:nth-child(5):hover~.card {
-    box-shadow: 3px 10px 20px #5d26f691;
-    transform: rotateX(0deg) rotateY(0deg)
-}
-
-.t_over:nth-child(6):hover~.card {
-    box-shadow: 3px 10px 20px #5d26f686;
-    transform: rotateX(0deg) rotateY(-20deg)
-}
-
-.t_over:nth-child(7):hover~.card {
-    box-shadow: 0px -10px 20px #5d26f66e;
-    transform: rotateX(20deg) rotateY(20deg);
-}
-
-.t_over:nth-child(8):hover~.card {
-    box-shadow: 3px -10px 20px #5d26f66e;
-    transform: rotateX(20deg) rotateY(0deg)
-}
-
-.t_over:nth-child(9):hover~.card {
-    box-shadow: 3px -10px 20px #5d26f657;
-    transform: rotateX(20deg) rotateY(-20deg)
+        & .card {
+            width: 8em;
+            height: 5em;            
+            padding: 1.8em 1.2em;
+            margin-bottom: 1em;
+            
+            & h4 {
+                font-size: 0.7em;
+                text-align: center;
+                line-height: 1.2;
+                margin-block-end: 0;
+                margin-block-start: 1em;
+                font-weight: 400;
+                color: var(--primary);
+            }
+            & p {
+                font-size: 0.54em;
+                line-height: 1.6;    
+                color: var(--light);
+                width: 14em;
+                text-align: center;
+                margin-block-start: 0;
+                margin-block-end: 0;
+            }
+        }
+    }
 }

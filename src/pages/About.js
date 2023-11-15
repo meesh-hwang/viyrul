@@ -6,6 +6,7 @@ import { useState, useLayoutEffect } from 'react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/all'
 import PulsingCircle from '../components/PulsingCircle'
+import ScrollDown from '../components/ScrollDown'
 
 const team = [
     {
@@ -93,7 +94,7 @@ const About = () => {
 
             gsap.to(".about-intro", {
                 opacity: 1,
-                yPercent: -250,
+                yPercent: -200,
                 duration: 1,
                 ease: 'ease',
                 scale: 1.8,
@@ -106,17 +107,17 @@ const About = () => {
             });
 
               gsap.to(".about-blurb", {
-                duration: 3,
-                scale: 2,
+                duration: 1,
+                scale: 1.8,
                 opacity: 1,
                 yPercent: -200,
                 ease: 'ease',
                 scrollTrigger: {
                     toggleActions: "play complete restart",
                     trigger: ".about-intro ",
-                    start: "top 50%",
-                    end: 'bottom bottom',
-                    scrub: 1
+                    start: "top center",
+                    end: 'bottom center',
+                    scrub: 0.5
                 },
             });
 
@@ -125,12 +126,12 @@ const About = () => {
                 duration: 5,
                 scale: 1,
                 opacity: 1,
-                yPercent: -200,
+                yPercent: -175,
                 scrollTrigger: {
                     toggleActions: "play complete restart",
                     trigger: ".about-blurb",
-                    start: "top 80%",
-                    end: 'bottom 80%',
+                    start: "top 60%",
+                    end: 'bottom top',
                     scrub: 1
                 },
             });
@@ -138,13 +139,14 @@ const About = () => {
             gsap.to(".contactCTA", {
                 ease: 'ease',
                 duration: 2,
+                scale: 1,
                 opacity: 1,
                 yPercent: -200,
                 scrollTrigger: {
-                    trigger: ".about-blurb",
+                    trigger: ".team",
                     toggleActions: "play complete restart",
-                    start: "bottom top", 
-                    end: 'bottom 90%',
+                    start: "-250% center", 
+                    end: 'center bottom',
                     scrub: 1
                 },
             });
@@ -153,7 +155,8 @@ const About = () => {
     }, [])
 
     return (
-        <div className="about">
+        <div className="about pg-container">
+                <ScrollDown />
             
                 <div className='about-hero panel'>
                     <PulsingCircle />
@@ -161,14 +164,17 @@ const About = () => {
                         <h2>Welcome to <span className='emph'>Viyrul</span></h2>
                     </div>
                 </div>
+
                 <div className='about-intro panel'>
                     <div className='section'>
                         <p>With a shared vision and a deep-seated passion for social media management, digital marketing, and web development, we embarked on a journey fueled by innovation. Recognizing the need for businesses to thrive in the digital age, we set out to provide extraordinary solutions that empower our clients.</p>                </div>
                 </div>
+
                 <div className="about-blurb panel">
                     <div className='section'>
                         <p>At <span className="emph">Viyrul</span>, we are passionate about turning your web dreams into reality. Our services are designed to help your business thrive in the digital age.</p>                </div>
                 </div>
+
                 <div className='team panel'>
                     <h2>Meet the <span className='emph'>team</span></h2>
                     <div className='members'>

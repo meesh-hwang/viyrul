@@ -9,12 +9,13 @@
         height: 100%;
         width: 100%;
         display: flex;
-        justify-content: flex-start;
+        justify-content: center;
         align-items: center;
         & h2 {
             font-size: 7.2em;
             text-align: end;
             min-width: 10em;
+            margin-left: 2em;
             }
     }
 }
@@ -32,19 +33,26 @@
     line-height: 2.2em;
     font-weight: 600;
     }
+
+    & .panel {
+        display: flex;
+        flex-direction: column;
+
+    }
 }
 
 .about-blurb {
     opacity: 0;
+    margin: 5.4em 0em 10.6em 0em;
     transition: ease;
-    margin: 7em 0em 3em 0em;
     & p{
+    transition: ease;
     color: var(--light);
-    padding: 0 30em 2em 30em;
-    font-weight: 900;
-    line-height: 1.8;
-    font-size: 0.6em;
-    text-align: center;
+        width: 27em;
+        font-weight: 900;
+        line-height: 1.8;
+        font-size: 0.6em;
+        text-align: center;
     }
 }
 
@@ -125,19 +133,4 @@
     color: var(--primary);
 }
 
-.about .circle {
-  left: 50%;
-
-  &
   
-  .circle-pulse {
-    right: 50%;
-  }
-
-}
-  .about {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    
-  }

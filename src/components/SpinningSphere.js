@@ -1,7 +1,11 @@
 import React, { useRef, useEffect } from 'react';
 import * as THREE from 'three';
+import { useMediaQuery } from 'react-responsive';
 
 const SpinningSphere = () => {
+
+    const isMobile = useMediaQuery({ maxWidth: 768 })
+
   const globeRef = useRef();
 
   useEffect(() => {
@@ -71,7 +75,8 @@ const SpinningSphere = () => {
 
   return (
     <div
-      ref={globeRef} className='globe'
+      ref={globeRef} 
+      className={isMobile ? 'globe mobile' : 'globe'}
     />
   );
 };

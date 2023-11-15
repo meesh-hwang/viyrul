@@ -5,8 +5,12 @@ import '../styles/services.css'
 import ContactCTA from '../components/ContactCTA';
 import ServicesCards from '../components/ServicesCards';
 import ServicesSlider from '../components/ServicesSlider';
+import PulsingCircle from '../components/PulsingCircle';import { useMediaQuery } from 'react-responsive'
+import ScrollDown from '../components/ScrollDown';
 
 const Services = () => {
+    const isMobile = useMediaQuery({ maxWidth: 768 });
+    const isDesktop = useMediaQuery({ minWidth: 769 });
 
     useLayoutEffect(() => {
         gsap.registerPlugin(ScrollTrigger);
@@ -20,7 +24,7 @@ const Services = () => {
               });
             gsap.to(".services-blurb", {
                 ease: "sine.out",
-                yPercent: -25,
+                yPercent: isDesktop ? -35 : -15 ,
                 duration: 1,
                 scale: 1,
                 opacity: 1,
@@ -31,27 +35,28 @@ const Services = () => {
                 duration: 2,
                 scale: 1,
                 opacity: 1,
-                yPercent: -65,
+                yPercent: isDesktop ? -30 : -50 ,
                 scrollTrigger: {
                     toggleActions: "play complete restart",
-                    markers: true,
                     trigger: ".services-blurb",
-                    start: "-70% top",
-                    end: "bottom 30%",
+                    start: "center center",
+                    end: "center top",
                     scrub: 1
                 },
             });
 
-            gsap.to(".contactCTA", {
+            gsap.to(".services-pg .contactCTA", {
                 ease: 'ease',
                 duration: 2,
                 opacity: 1,
-                yPercent: -150,
+                yPercent: isDesktop ? -150 : -175 ,
+                scale: 1,
                 scrollTrigger: {
                     trigger: ".services-slider-section",
                     toggleActions: "play complete restart",
-                    start: "-80% top", 
-                    end: 'center 60%',
+                    markers:true,
+                    start: "top bottom", 
+                    end: isDesktop ? 'top top' : "top center",
                     scrub: 1
                 },
             });
@@ -60,12 +65,14 @@ const Services = () => {
     }, [])
 
     return(
-        <div className="pg-container services">
-            <div className="circle-gradient"></div> 
+        <div className={isDesktop ? "pg-container services-pg" : "pg-container services-pg tablet"}>
             <div className='services-blurb services-section-container'>
+                <PulsingCircle />
                 <h3>We provide quality services<br /> to help you take your <br />business <div className="emph">online</div></h3>
                 <ServicesCards />
             </div>
+            <ScrollDown />
+
             <div className='services-section-container services-slider-section'>
                 <h2>Our <span className='emph'>Process</span></h2>
                 <ServicesSlider />

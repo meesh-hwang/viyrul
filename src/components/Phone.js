@@ -2,6 +2,7 @@ import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/all';
 import { useLayoutEffect, useRef } from 'react';
 import phones from '../assets/img/phones.png';
+import PulsingCircle from './PulsingCircle';
 
 const Phone = () => {
 
@@ -17,8 +18,10 @@ const Phone = () => {
     let frameCount = 17;
     let offsetValue = 6.5;
 
+
+
     gsap.to(
-    element.querySelector(".phones"),
+      element.querySelector(".phones"),
     {
       objectPosition: (-offsetValue * frameCount * 2) + "em 50%",
       ease: "steps(" + frameCount + ")",
@@ -30,7 +33,7 @@ const Phone = () => {
         end: "+=100%",
         pin: true,
         scrub: true,
-      },
+       },
     }
   );
     });
@@ -40,6 +43,7 @@ const Phone = () => {
 
   return (
     <div className="scene" ref={ref}>
+      <PulsingCircle />
       <img className='phones' alt='Phone with notifications' src={phones} />
     </div>
   )

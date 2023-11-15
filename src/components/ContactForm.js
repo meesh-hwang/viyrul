@@ -65,6 +65,7 @@ import emailjs from '@emailjs/browser';
                     name="name" 
                     value={formValues.name}
                     placeholder="John Smith"
+                    autoComplete="on"
                     required />
             </div>
             <div>
@@ -76,6 +77,7 @@ import emailjs from '@emailjs/browser';
                     name="email" 
                     value={formValues.email}
                     placeholder="john@gmail.com"
+                    autoComplete="on"
                     required />
             </div>
             <div>
@@ -87,6 +89,7 @@ import emailjs from '@emailjs/browser';
                     name="subject" 
                     value={formValues.subject}
                     placeholder="Re: Meeting"
+                    autoComplete="on"
                     required />
             </div>
             <div>
@@ -98,6 +101,7 @@ import emailjs from '@emailjs/browser';
                     value={formValues.message} 
                     placeholder="Type your message here"
                     cols="30" rows="10" 
+                    autoComplete="on"
                     required />
             </div>
             <button type="submit" className="btn">Send</button>

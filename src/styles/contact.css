@@ -10,6 +10,7 @@
     font-weight: 900;
     font-size: 1.3em;
     line-height: 1.4;
+    margin-block-start: 0em;
 }
 
 .contact p {
@@ -17,6 +18,11 @@
     color: var(--light);
     font-weight: 300;
     line-height: 1.5;
+}
+
+.contact .connect {
+  color: var(--primary);
+  font-weight: 400;
 }
 
 .contact a {
@@ -88,12 +94,9 @@ form.contact-form {
     color: var(--primary);
   }
   
-.contact .circle-gradient {
-    right: 15em;
-    margin-top: 0em;
-    background: radial-gradient(12% 30% at 60% 45%, rgba(93, 38, 246, 0.233) 0%, rgba(92, 38, 246, 0) 100%);
-    position: absolute;
-    width: 65em;
-    height: 25em;
-    z-index: -1;
+.contact .circle {
+    right: 14em;
+    top: 4em;
+    height: 14vmax;
+  width: 14vmax;
 }
