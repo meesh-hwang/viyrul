@@ -15,13 +15,24 @@ const Services = () => {
     useLayoutEffect(() => {
         gsap.registerPlugin(ScrollTrigger);
         let ctx = gsap.context(() => {
-            gsap.to(".card", {
-                duration: 1,
-                opacity: 1, 
-                delay: 0.5, 
-                stagger: 0.2,
-                ease: "sine.out", 
-              });
+            gsap.fromTo(".card", {
+                scale: 0.4,
+                opacity: 0,
+            },{
+                ease: 'ease',
+                duration: 3,
+                stagger: 0.5,
+                ease: "sine.out",
+                opacity: 1,
+                scale: 1,
+                scrollTrigger: {
+                    trigger: ".services-blurb h3",
+                    toggleActions: "play complete restart",
+                    start: "top bottom", 
+                    end: 'bottom center',
+                    scrub: 1
+                },
+            });
             gsap.to(".services-blurb", {
                 ease: "sine.out",
                 yPercent: isDesktop ? -35 : -15 ,
@@ -35,7 +46,7 @@ const Services = () => {
                 duration: 2,
                 scale: 1,
                 opacity: 1,
-                yPercent: isDesktop ? -30 : -50 ,
+                yPercent: isDesktop ? -10 : -30,
                 scrollTrigger: {
                     toggleActions: "play complete restart",
                     trigger: ".services-blurb",
@@ -54,7 +65,6 @@ const Services = () => {
                 scrollTrigger: {
                     trigger: ".services-slider-section",
                     toggleActions: "play complete restart",
-                    markers:true,
                     start: "top bottom", 
                     end: isDesktop ? 'top top' : "top center",
                     scrub: 1

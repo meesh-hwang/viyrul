@@ -8,7 +8,7 @@ const Home = () => {
     
 
     return(
-        <div className='home'>
+        <div className='home pg-container'>
             <Hero />
             <ScrollDown />
             <ServicesSection />

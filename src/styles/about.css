@@ -1,9 +1,12 @@
-
+.about.pg-container {
+    overflow: hidden;
+}
 
 .about-hero {  
     display: flex;
     justify-content: center;
-    height: 80vh;
+        align-items: center;
+        height: 80vh;
     padding-top: 1em;
     & .section {
         height: 100%;
@@ -29,7 +32,7 @@
     & p{
         color: var(--light);
         width: 27em;
-        font-size: 0.6em;
+        font-size: 0.8em;
     line-height: 2.2em;
     font-weight: 600;
     }
@@ -43,15 +46,15 @@
 
 .about-blurb {
     opacity: 0;
-    margin: 5.4em 0em 10.6em 0em;
+    margin: 5em 0em 6em 0em;
     transition: ease;
     & p{
     transition: ease;
     color: var(--light);
         width: 27em;
-        font-weight: 900;
+        font-weight: 200;
         line-height: 1.8;
-        font-size: 0.6em;
+        font-size: 1em;
         text-align: center;
     }
 }
@@ -67,7 +70,6 @@
     transition: ease;
 }
 
-
 .team {
     display: flex;
     flex-direction: column;
@@ -77,12 +79,11 @@
     align-items: center;    
     transition: ease;
     opacity: 0;
-    transform: scale(0.5);
 }
 
 .contactCTA {
-        margin-top: -35%;
-    margin-bottom: -10em;
+    margin-top: -40%;
+    margin-bottom: -13em;
 }
 
 .members {
@@ -98,7 +99,7 @@
     gap: 0.34em;
     align-items: center;
     justify-content: center;
-    background-color: var(--black);
+    background-color: var(--secondary);
     box-shadow: 2px 2px 30px #5d26f62c;
     border-radius: 20px;
     padding: 0 2em;

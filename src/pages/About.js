@@ -73,8 +73,6 @@ const About = () => {
         );
     }
 
-
-
     useLayoutEffect(() => {
         gsap.registerPlugin(ScrollTrigger);
         let ctx = gsap.context(() => {
@@ -92,64 +90,116 @@ const About = () => {
                 }
             });
 
-            gsap.to(".about-intro", {
-                opacity: 1,
-                yPercent: -200,
-                duration: 1,
-                ease: 'ease',
-                scale: 1.8,
-                scrollTrigger: {
-                    trigger: ".about-hero",
-                    start: 'center',
-                    toggleActions: "play complete restart",
-                    scrub: 1
-                },
-            });
+            let panels = document.querySelectorAll(".panel");
 
-              gsap.to(".about-blurb", {
-                duration: 1,
-                scale: 1.8,
-                opacity: 1,
-                yPercent: -200,
-                ease: 'ease',
-                scrollTrigger: {
-                    toggleActions: "play complete restart",
-                    trigger: ".about-intro ",
-                    start: "top center",
-                    end: 'bottom center',
-                    scrub: 0.5
-                },
-            });
+            for ( let i = 1; i < panels.length; i++ ) {
 
-            gsap.to(".team", {
-                ease: 'ease',
-                duration: 5,
-                scale: 1,
-                opacity: 1,
-                yPercent: -175,
-                scrollTrigger: {
-                    toggleActions: "play complete restart",
-                    trigger: ".about-blurb",
-                    start: "top 60%",
-                    end: 'bottom top',
-                    scrub: 1
-                },
-            });
+                if( i !== 4 ) {
+                    gsap.fromTo(panels[i], 
+                        {
+                            scale: 0.6,
+                            yPercent: 0,
+                            opacity:0
+                        },{
+                        opacity: 1,
+                        yPercent: -150,
+                        ease: 'ease',
+                        scale: 1.1,
+                        scrollTrigger: {
+                            trigger: panels[i-1],
+                            start: 'top center',
+                            end: 'bottom center',
+                            scrub: 1
+                        },
+                    });
 
-            gsap.to(".contactCTA", {
-                ease: 'ease',
-                duration: 2,
-                scale: 1,
-                opacity: 1,
-                yPercent: -200,
-                scrollTrigger: {
-                    trigger: ".team",
-                    toggleActions: "play complete restart",
-                    start: "-250% center", 
-                    end: 'center bottom',
-                    scrub: 1
-                },
-            });
+                    gsap.fromTo(panels[i],
+                        {
+                            yPercent: -150,
+                            scale: 1.1,    
+                        },{
+                        opacity: 0,
+                        yPercent: -250,
+                        ease: 'ease',
+                        scale: 0.6,
+                        scrollTrigger: {
+                            trigger: panels[i],
+                            start: 'center center',
+                            end: 'bottom top',
+                            scrub: 1
+                        },
+                    });
+                } else {
+
+                    // last panel
+                    gsap.fromTo(panels[i], 
+                        {
+                            scale: 0.6,
+                            yPercent: 0,
+                            opacity:0
+                        },{
+                        opacity: 1,
+                        yPercent: -250,
+                        ease: 'ease',
+                        scale: 1.1,
+                        scrollTrigger: {
+                            trigger: panels[i-1],
+                            start: 'top',
+                            end: 'center center',
+                            scrub: 1
+                        },
+                    });
+                }
+                
+    
+                
+
+            }
+
+            //   gsap.to(".about-blurb", {
+            //     duration: 1,
+            //     scale: 1.8,
+            //     opacity: 1,
+            //     yPercent: -200,
+            //     ease: 'ease',
+            //     scrollTrigger: {
+            //         toggleActions: "play complete restart",
+            //         trigger: ".about-intro ",
+            //         start: "top center",
+            //         end: 'center center',
+            //         scrub: 0.5
+            //     },
+            // });
+
+            // gsap.to(".team", {
+            //     ease: 'ease',
+            //     duration: 5,
+            //     scale: 1,
+            //     opacity: 1,
+            //     yPercent: -175,
+            //     scrollTrigger: {
+            //         toggleActions: "play complete restart",
+            //         trigger: ".about-intro",
+            //         start: "center",
+            //         end: 'bottom top',
+            //         scrub: 1
+            //     },
+            // });
+
+            // gsap.to(".contactCTA", {
+            //     ease: 'ease',
+            //     duration: 2,
+            //     scale: 1,
+            //     opacity: 1,
+            //     yPercent: -200,
+            //     scrollTrigger: {
+            //         trigger: ".about-blurb",
+            //         toggleActions: "play complete restart",
+            //         start: "bottom", 
+            //         end: 'bottom',
+            //         scrub: 1
+            //     },
+            // });
         });
         return () => ctx.revert();
     }, [])

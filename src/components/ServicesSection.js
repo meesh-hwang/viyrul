@@ -77,7 +77,7 @@ const ServicesSection = () => {
         </div>
       </Mobile>
       <Tablet>
-        <div className={isLaptop ? 'services-container tablet' : 'services-container'}>
+        <div className={isLaptop ? 'services-container' : 'services-container tablet'}>
           <Phone />
           <div className='services-text'>
           <div className='blurb blurb-1'>

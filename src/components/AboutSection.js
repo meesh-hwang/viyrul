@@ -16,7 +16,10 @@ const AboutSection = () => {
         gsap.registerPlugin(ScrollTrigger);
         let ctx = gsap.context(() => {
 
-            gsap.to(".card", {
+            gsap.fromTo(".card", {
+                scale: 0.4,
+                opacity: 0,
+            },{
                 ease: 'ease',
                 duration: 3,
                 stagger: 0.5,
@@ -26,7 +29,6 @@ const AboutSection = () => {
                 scrollTrigger: {
                     trigger: ".about-heading",
                     toggleActions: "play complete restart",
-                    markers:true,
                     start: "top center", 
                     end: 'bottom bottom',
                     scrub: 1
@@ -39,10 +41,26 @@ const AboutSection = () => {
                 opacity: 1,
                 scale: 1,
                 scrollTrigger: {
+                    trigger: ".about-text",
+                    toggleActions: "play complete restart",
+                    markers:true,
+                    start: "top center", 
+                    end: 'top center',
+                    scrub: 1
+                },
+            });
+
+            gsap.to(".about-text", {
+                ease: 'ease',
+                duration: 2,
+                opacity: 1,
+                yPercent: -50,
+                scale: 1.1,
+                scrollTrigger: {
                     trigger: ".about-cards",
                     toggleActions: "play complete restart",
-                    start: "top bottom", 
-                    end: 'bottom bottom',
+                    start: "center top", 
+                    end: 'center top',
                     scrub: 1
                 },
             });

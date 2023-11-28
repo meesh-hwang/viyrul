@@ -1,4 +1,4 @@
-/*DESKTOP*/
+/*TABLET*/
 
 .services-pg.tablet {
     & .services-slider-section {
@@ -50,7 +50,6 @@
     align-items: center;
     
     & .circle-pulse {
-        right: 50%;
         top: 5%;  
 
         & .circle {
@@ -68,7 +67,7 @@
     }
     
     & .services-blurb {
-        margin-top: 30%;
+        margin-top: 40%;
         & h3{
             text-align: center;
             line-height: 1.1;
@@ -79,11 +78,13 @@
 
     & .contactCTA {
         margin-top: 0;
+        margin-bottom: -9em;
     }
     
     & .services-slider-section {
         transform: scale(0.3);
         opacity: 0;
+        margin-bottom: 25%;
     }
 
     & h1 {
