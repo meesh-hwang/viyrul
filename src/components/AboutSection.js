@@ -43,7 +43,6 @@ const AboutSection = () => {
                 scrollTrigger: {
                     trigger: ".about-text",
                     toggleActions: "play complete restart",
-                    markers:true,
                     start: "top center", 
                     end: 'top center',
                     scrub: 1
