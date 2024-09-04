@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/viyrul/static/css/main.02c25ff9.css",
-    "main.js": "/viyrul/static/js/main.7c2ee5e1.js",
+    "main.css": "/viyrul/static/css/main.b111497f.css",
+    "main.js": "/viyrul/static/js/main.224834f3.js",
     "static/js/787.677bcf55.chunk.js": "/viyrul/static/js/787.677bcf55.chunk.js",
     "static/media/phones.png": "/viyrul/static/media/phones.dcfc2818ac5f8602edbd.png",
     "static/media/Poppins-Regular.woff2": "/viyrul/static/media/Poppins-Regular.408e3747283ff9538aca.woff2",
@@ -15,12 +15,12 @@
     "static/media/Poppins-Thin.woff2": "/viyrul/static/media/Poppins-Thin.67189c02884e1aa3655b.woff2",
     "static/media/Karla-VariableFont_wght.woff2": "/viyrul/static/media/Karla-VariableFont_wght.a2b242980c58301f75ab.woff2",
     "index.html": "/viyrul/index.html",
-    "main.02c25ff9.css.map": "/viyrul/static/css/main.02c25ff9.css.map",
-    "main.7c2ee5e1.js.map": "/viyrul/static/js/main.7c2ee5e1.js.map",
+    "main.b111497f.css.map": "/viyrul/static/css/main.b111497f.css.map",
+    "main.224834f3.js.map": "/viyrul/static/js/main.224834f3.js.map",
     "787.677bcf55.chunk.js.map": "/viyrul/static/js/787.677bcf55.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.02c25ff9.css",
-    "static/js/main.7c2ee5e1.js"
+    "static/css/main.b111497f.css",
+    "static/js/main.224834f3.js"
   ]
 }
