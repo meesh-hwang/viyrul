@@ -1,8 +1,8 @@
-import '../styles/home.css'
-import Hero from '../components/Hero';
-import ServicesSection from '../components/ServicesSection';
-import AboutSection from '../components/AboutSection';
-import ScrollDown from '../components/ScrollDown';
+import '../../styles/home.css'
+import Hero from '../../components/Hero';
+import ServicesSection from './ServicesSection';
+import AboutSection from './AboutSection';
+import ScrollDown from '../../components/ScrollDown';
 
 const Home = () => {
     

@@ -15,10 +15,10 @@
         justify-content: center;
         align-items: center;
         & h2 {
-            font-size: 7.2em;
+            font-size: 7em;
             text-align: end;
             min-width: 10em;
-            margin-left: 2em;
+            margin-left: 4em;
             }
     }
 }
@@ -26,7 +26,7 @@
 .about-intro {
     text-align: center;
     
-    margin-top: 50%;
+    margin-top: 100%;
     opacity: 0;
     transition: ease;
     & p{
@@ -34,7 +34,7 @@
         width: 27em;
         font-size: 0.8em;
     line-height: 2.2em;
-    font-weight: 600;
+    font-weight: 500;
     }
 
     & .panel {
@@ -73,7 +73,7 @@
 .team {
     display: flex;
     flex-direction: column;
-    margin-top: 65%;
+    margin-top: 50%;
     gap: 2.4em;
     justify-content: center;
     align-items: center;    
@@ -94,19 +94,19 @@
 .about .card {
     display: flex;
     flex-direction: column;
-    height: 14em;
-    width: 13em;
+    height: 12em;
+    width: 10em;
     gap: 0.34em;
     align-items: center;
     justify-content: center;
     background-color: var(--secondary);
     box-shadow: 2px 2px 30px #5d26f62c;
     border-radius: 20px;
-    padding: 0 2em;
+    padding: 0 3em;
 }
 
 .card p {
-    font-size: 0.54em;
+    font-size: 0.52em;
     line-height: 1.8;
     color: #ffffffce;
     font-weight: 300;
@@ -116,7 +116,7 @@
 
 
 .about .card img {
-    width: 8em;
+    width: 3em;
     object-fit: contain;
 }
 

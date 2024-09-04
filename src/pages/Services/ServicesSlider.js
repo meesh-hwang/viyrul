@@ -1,9 +1,9 @@
 import React, { useLayoutEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { Draggable } from 'gsap/all';
-import flexible from '../assets/img/icons/flexible.png';
+import flexible from '../../assets/img/icons/flexible.png';
 import { useMediaQuery } from 'react-responsive';
-import '../styles/servicesSlider.css';
+import '../../styles/servicesSlider.css';
 
 
 const cards = [

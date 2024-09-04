@@ -1,5 +1,5 @@
 import { Outlet, Link } from "react-router-dom";
-import SpinningSphere from "./SpinningSphere";
+import SpinningSphere from "../pages/Home/SpinningSphere";
 import { useMediaQuery } from "react-responsive";
 import gsap from "gsap";
 import { useLayoutEffect } from 'react';

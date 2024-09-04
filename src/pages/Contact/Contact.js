@@ -1,6 +1,6 @@
-import ContactForm from "../components/ContactForm"
-import PulsingCircle from "../components/PulsingCircle"
-import '../styles/contact.css'
+import ContactForm from "./ContactForm"
+import PulsingCircle from "../../components/PulsingCircle"
+import '../../styles/contact.css'
 
 const Contact = () => {
     return(

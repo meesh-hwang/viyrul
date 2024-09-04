@@ -104,7 +104,7 @@ import emailjs from '@emailjs/browser';
                     autoComplete="on"
                     required />
             </div>
-            <button type="submit" className="btn">Send</button>
+            <button type="submit" className="btn" disabled={loading}>{loading ? "Sending..." : "Send"}</button>
         </form>
     );
 };

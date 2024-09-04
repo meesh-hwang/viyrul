@@ -1,15 +1,15 @@
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/all';
 import { useLayoutEffect, useRef } from 'react';
-import phones from '../assets/img/phones.png';
-import PulsingCircle from './PulsingCircle';
+import phones from '../../assets/img/phones.png';
+import PulsingCircle from '../../components/PulsingCircle';
+
 
 const Phone = () => {
 
   const ref = useRef(null);
 
   useLayoutEffect(() => {
-
     let ctx = gsap.context(() => {
 
     gsap.registerPlugin(ScrollTrigger);

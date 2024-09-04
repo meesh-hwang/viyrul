@@ -22,7 +22,7 @@
     width: 64vw;
     height: 64vh;
     top: -3%;
-    left: 0%; 
+    left: 0%;
 }
 
 .globe canvas:nth-child(2) {
@@ -36,7 +36,7 @@
     align-items: center;
     justify-content: center;
     position: relative;
-    
+
 }
 
 .hero-text {
@@ -82,7 +82,7 @@
 .scene {
     display: flex;
     justify-content: center;
-    align-items: flex-end;
+    align-items: center;
     position: relative !important;
 }
 
@@ -113,13 +113,30 @@
     align-items: center;
     margin: auto;
 }
-
 .services-container.mobile {
     flex-direction: column;
-    margin-bottom: 4em;
+    margin-top: 0;
+
+    & .services-text{
+        align-items: center;
+        padding: 1em 0 3em 0;
+        margin-top: 3em;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    & .pg-link {
+        margin-top: 1.4em;
+    }
+
+}
+ .services-container.tablet{
+    margin-top: 200%;
+
 
     & .services-text {
-        padding: 1em 0 3em 0;
+        padding: 1em 0 3em 4em;
     }
 
     & .pg-link {
@@ -137,7 +154,7 @@
     margin-top: 5em;
     display: flex;
     flex-direction: column;
-    flex-direction: column-reverse;
+    justify-content: flex-end;
     & .blurb {
         position: absolute;
         display: flex;
@@ -174,7 +191,7 @@
     flex-direction: column;
     align-items: center;
     gap: 2.2em;
-    margin-top: 100%;
+    margin-top: 110%;
     & h2 {
         font-size: 1.28em;
         font-weight: 900;
@@ -187,7 +204,7 @@
     }
 
     & .about-text {
-        padding: 2em 0 3em 0;
+        padding: 0em 0 3em 0;
         width: 20em;
         display: flex;
         flex-direction: column;
@@ -204,19 +221,16 @@
         }
     }
 
-    & .about-cards {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
+    & .abouts {
+        display: grid;
+        gap: 0.8em 1em;
+        grid-template-rows: repeat(2, auto);
+        grid-template-columns: repeat(2, 1fr);
+        margin-top: 1em;
 
-        & .row {
-            display: flex;
-            align-self: center;
-        }
-
-        & h4 {
+        & h5 {
             color: var(--light);
-            font-size: 0.78em;
+            font-size: 0.84em;
             font-weight: 900;
             line-height: 0.6;
             margin-bottom: 1em;
@@ -247,3 +261,11 @@
 
     }
 }
+
+.about-section.mobile {
+    margin-top: 200%;
+}
+
+.about-section.tablet {
+    margin-top: 150%;
+} 
