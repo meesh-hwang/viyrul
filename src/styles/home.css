@@ -22,7 +22,7 @@
     width: 64vw;
     height: 64vh;
     top: -3%;
-    left: 0%;
+    left: -15%;
 }
 
 .globe canvas:nth-child(2) {
@@ -227,6 +227,7 @@
         grid-template-rows: repeat(2, auto);
         grid-template-columns: repeat(2, 1fr);
         margin-top: 1em;
+        overflow: scroll;
 
         & h5 {
             color: var(--light);
@@ -263,7 +264,28 @@
 }
 
 .about-section.mobile {
-    margin-top: 200%;
+    margin-top: 50em;
+
+    & h3 {
+        text-align: center;
+    }
+    
+    & .about-text {
+        width: 16em;
+    }
+    
+    & .abouts {
+        gap: 0.2em 0.3em;
+
+        & img {
+            display: none;
+        }
+
+        & .card {
+            width: 6em;
+            padding: 1em 0.8em;
+        }
+    }
 }
 
 .about-section.tablet {

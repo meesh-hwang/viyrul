@@ -56,7 +56,6 @@ const AboutSection = () => {
                     trigger: ".about-heading",
                     toggleActions: "play complete restart",
                     start: "top center",
-                    markers: { startColor: "green", endColor: "red", fontSize: "12px" }, // Debugging markers
                     end: 'bottom bottom',
                     scrub: 1
                 },
@@ -68,11 +67,10 @@ const AboutSection = () => {
                 opacity: 1,
                 scale: 1,
                 scrollTrigger: {
-                    trigger: ".circle-pulse",
+                    trigger: ".abouts",
                     toggleActions: "play complete restart",
-                    start: "top center",
-                    markers: { startColor: "green", endColor: "red", fontSize: "12px" }, // Debugging markers
-                    end: 'top center',
+                    start: "center top",
+                    end: 'center top',
                     scrub: 1
                 },
             });
@@ -85,10 +83,9 @@ const AboutSection = () => {
                 scrollTrigger: {
                     trigger: ".abouts",
                     toggleActions: "play complete restart",
-                    start: "center top",
+                    start: "top top",
                     end: 'center top',
                     scrub: 1,
-                    markers: { startColor: "green", endColor: "red", fontSize: "12px" } // Debugging markers
                 },
             });
 
